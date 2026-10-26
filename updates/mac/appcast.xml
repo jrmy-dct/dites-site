@@ -25,7 +25,7 @@
         </ul>
       ]]></description>
       <enclosure
-        url="https://github.com/jrmy-dct/dites-sites/releases/download/v0.1.0/Dites.dmg"
+        url="https://github.com/jrmy-dct/dites-site/releases/download/v0.1.0/Dites.dmg"
         length="0"
         type="application/octet-stream"
         sparkle:edSignature="REMPLACER_PAR_LA_SIGNATURE_EDDSA" />

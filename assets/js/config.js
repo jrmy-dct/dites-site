@@ -4,8 +4,8 @@
 // reçoit automatiquement l'URL correspondante (voir main.js).
 window.DITES_CONFIG = {
   downloads: {
-    mac: "https://github.com/jrmy-dct/dites-sites/releases/latest/download/Dites.dmg",
-    android: "https://github.com/jrmy-dct/dites-sites/releases/latest/download/Dites.apk",
+    mac: "https://github.com/jrmy-dct/dites-site/releases/latest/download/Dites.dmg",
+    android: "https://github.com/jrmy-dct/dites-site/releases/latest/download/Dites.apk",
   },
   // Flux de mise à jour lus par les apps (servis par ce site).
   updates: {
