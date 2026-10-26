@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750">
+  <!-- Emplacement de capture d'écran : remplacer ce fichier (même nom, ou PNG/WebP en changeant le src dans index.html). -->
+  <rect width="1200" height="750" fill="#ece6de"/>
+  <rect x="24" y="24" width="1152" height="702" rx="20" fill="none" stroke="#b8ada0" stroke-width="3" stroke-dasharray="14 12"/>
+  <text x="50%" y="47%" text-anchor="middle" font-family="system-ui, sans-serif" font-size="48" font-weight="600" fill="#6b6259">Mac · styles et dictionnaire</text>
+  <text x="50%" y="55%" text-anchor="middle" font-family="system-ui, sans-serif" font-size="32" fill="#8a8077">Capture d'écran à venir · 1200 × 750</text>
+</svg>

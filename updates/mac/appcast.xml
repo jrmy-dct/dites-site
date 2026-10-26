@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Flux Sparkle de l'app Mac, servi à /updates/mac/appcast.xml.
+  EXEMPLE : valeurs fictives à remplacer à chaque version.
+  - sparkle:version = CFBundleVersion (numéro de build, croissant)
+  - sparkle:shortVersionString = version affichée
+  - sparkle:edSignature = signature EdDSA du DMG (outil sign_update de Sparkle)
+  - length = taille du fichier en octets
+-->
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Dites</title>
+    <link>https://dites.app/updates/mac/appcast.xml</link>
+    <description>Mises à jour de Dites pour Mac</description>
+    <language>fr</language>
+    <item>
+      <title>Dites 0.1.0</title>
+      <pubDate>Mon, 26 Oct 2026 12:00:00 +0000</pubDate>
+      <sparkle:version>1</sparkle:version>
+      <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <ul>
+          <li>Première version publique.</li>
+        </ul>
+      ]]></description>
+      <enclosure
+        url="https://github.com/jrmy-dct/dites-sites/releases/download/v0.1.0/Dites.dmg"
+        length="0"
+        type="application/octet-stream"
+        sparkle:edSignature="REMPLACER_PAR_LA_SIGNATURE_EDDSA" />
+    </item>
+  </channel>
+</rss>
