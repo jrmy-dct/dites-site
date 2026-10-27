@@ -13,6 +13,7 @@ assets/
   css/style.css         Styles (thèmes clair et sombre via variables CSS)
   js/config.js          ← liens de téléchargement et flux de mise à jour (seul fichier à modifier)
   js/main.js            Injection des liens, bascule de thème
+  js/demos.js           Séquenceur des démos animées de « Comment ça marche »
   img/logo.svg          Icône de l'app
   img/favicon.svg       Icône de barre des menus (favicon)
   img/screenshots/      Emplacements de captures (SVG à remplacer)
@@ -39,6 +40,10 @@ Remplacez les fichiers de `assets/img/screenshots/` en gardant les mêmes noms, 
 ## Identité visuelle
 
 Calquée sur `Theme.swift` de l'app : papier vert sauge, encre presque noire, filets de 1 px, étiquettes mono en majuscules, aucune ombre sur les cartes, un seul accent (orange brûlé) réservé au point d'enregistrement. Les couleurs sont des variables CSS en tête de `assets/css/style.css`. Seul écart : la couleur `muted` du thème clair est légèrement foncée (#646C61 au lieu de #6B7368) pour un contraste AA sur le web.
+
+## Démos animées
+
+La section « Comment ça marche » contient deux démos (Mac et Android) dessinées en HTML/CSS. Les étapes sont les `<li data-on="…" data-ms="…">` de la transcription sous chaque démo : `data-on` liste les drapeaux posés sur la scène (le CSS affiche les éléments correspondants), `data-ms` la durée. Pour modifier un texte ou une étape, éditez ces `<li>` et les éléments de la scène, dans les deux langues. La lecture s'arrête hors écran, au survol, au focus ou avec le bouton Pause ; avec `prefers-reduced-motion`, elle ne démarre pas et les étapes se parcourent aux boutons.
 
 ## Langues
 

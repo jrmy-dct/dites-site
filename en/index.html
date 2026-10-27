@@ -103,48 +103,120 @@
       </div>
     </section>
 
-    <!-- 2. How it works -->
+    <!-- 2. How it works : démos animées (HTML/CSS, séquencées par assets/js/demos.js) -->
     <section id="how-it-works" class="section">
       <div class="container">
         <div class="section-head">
           <span class="label">01 · How it works</span>
           <h2>How it works</h2>
-          <p class="section-lead">Three steps, and no more typing.</p>
+          <p class="section-lead">Hold, talk, let go. The text lands where you are.</p>
         </div>
-        <ol class="steps">
-          <li class="card step">
-            <span class="step-num">01</span>
-            <h3>Talk</h3>
-            <p>Hold <span class="key">right ⌥</span> to talk, let go to finish (you can change the shortcut in Settings). For hands-free, tap it (release within 0.3 s), then press again to finish. <span class="key">⎋</span> cancels. On Android, the same works with the bubble above your keyboard.</p>
-          </li>
-          <li class="card step">
-            <span class="step-num">02</span>
-            <h3>Transcribed on your device</h3>
-            <p>Whisper turns your voice into text right on your Mac or phone. The audio never leaves your device.</p>
-          </li>
-          <li class="card step">
-            <span class="step-num">03</span>
-            <h3>Text lands where you are</h3>
-            <p>Dites pastes the text into the active field: email, chat, documents, any app. Optionally, Claude polishes it first.</p>
-          </li>
-        </ol>
-        <div class="card android-row">
-          <div class="android-copy">
-            <p class="tag">On Android</p>
-            <h3>A bubble above your keyboard</h3>
-            <p>A small bubble floats above your keyboard, in any app. Hold it to talk, tap it for hands-free. Your voice is recognized on the phone; only the text goes to Claude, and only if polishing is on.</p>
+        <div class="demos">
+          <figure class="demo" data-demo role="group" aria-label="Animated demo on Mac: a click in a document, the right Option key held down, the recording pill while you talk, then the options bubble offering the clean text in English, French or as a summary, and the text pasted into the document.">
+            <div class="demo-stage mac-stage" aria-hidden="true">
+              <div class="mac">
+                <div class="mac-screen">
+                  <div class="mac-display">
+                    <div class="win">
+                      <div class="win-bar"><span></span><span></span><span></span><em>Meeting notes.txt</em></div>
+                      <div class="doc">
+                        <i class="doc-l" style="width:92%"></i><i class="doc-l" style="width:78%"></i><i class="doc-l" style="width:86%"></i><i class="doc-l" style="width:44%"></i>
+                        <p class="doc-live"><span class="doc-insert">Let's meet Tuesday at 4 pm for the budget review.</span><span class="caret"></span></p>
+                      </div>
+                    </div>
+                    <div class="demo-raw"><span class="raw-label">You say</span>“uh so let's meet Tuesday at 2… no actually 4 for the budget review, yeah”</div>
+                    <div class="demo-pill">
+                      <span class="rec-dot"></span>
+                      <span class="demo-level"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+                      <span class="demo-timer" data-timer>0:00</span>
+                      <span class="demo-proc">Polishing…</span>
+                    </div>
+                    <div class="demo-options">
+                      <div class="opt-texts"><p class="t1">Let's meet Tuesday at 4 pm for the budget review.</p><p class="t2">On se voit mardi à 16 h pour le point budget.</p><p class="t3">Budget review: Tuesday, 4 pm.</p></div>
+                      <div class="opt-chips"><span class="chip c1">English</span><span class="chip c2">Français</span><span class="chip c3">Summary</span></div>
+                      <div class="opt-foot"><span><b class="dk dk-enter">↵</b>Paste</span><span><b class="dk">←</b><b class="dk">→</b><b class="dk dk-tab">⇥</b>Switch</span><span><b class="dk">⎋</b>Close</span></div>
+                    </div>
+                    <svg class="mouse" viewBox="0 0 16 22"><path d="M1 1v17l4.5-4.2 3 6.7 2.6-1.2-3-6.6H14z"/></svg>
+                    <span class="click-ring"></span>
+                  </div>
+                </div>
+                <div class="mac-base"></div>
+                <div class="mac-key"><span class="raw-label">Key</span><span class="mac-keycap">right ⌥</span></div>
+              </div>
+            </div>
+          <div class="demo-controls">
+            <button class="demo-btn" type="button" data-act="prev" aria-label="Previous step">←</button>
+            <button class="demo-btn demo-toggle" type="button" data-act="toggle" data-label-pause="Pause" data-label-play="Play" aria-pressed="false">Pause</button>
+            <button class="demo-btn" type="button" data-act="next" aria-label="Next step">→</button>
+            <p class="demo-caption"></p>
           </div>
-          <div class="droid-demo" aria-hidden="true">
-            <figure class="droid-state">
-              <span class="droid-bubble"><span class="droid-dot"></span><span class="droid-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></span>
-              <figcaption>Idle</figcaption>
-            </figure>
-            <figure class="droid-state">
-              <span class="droid-bubble is-recording"><span class="droid-dot"></span><span class="droid-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></span>
-              <figcaption>Recording</figcaption>
-            </figure>
+            <figcaption><span class="label">On Mac</span> Hold <span class="key">right ⌥</span>, talk, let go.</figcaption>
+            <details class="demo-transcript">
+              <summary>Show the sequence as text</summary>
+              <ol class="demo-steps">
+              <li data-on="mouse" data-ms="1100">The mouse pointer moves into the document.</li>
+              <li data-on="mouse m-doc click caret" data-ms="1000">Click: the text cursor blinks.</li>
+              <li data-on="mouse m-doc caret key" data-ms="1000">You hold right ⌥.</li>
+              <li data-on="caret key pill rec" data-ms="1400">The recording pill appears: you talk.</li>
+              <li data-on="caret key pill rec raw" data-ms="2400">What you say, word for word: “uh so let's meet Tuesday at 2… no actually 4 for the budget review, yeah”.</li>
+              <li data-on="caret keyup pill proc raw" data-ms="1300">You let go of the key: polishing…</li>
+              <li data-on="caret options sel-1" data-ms="1800">The options bubble offers the clean text: “Let's meet Tuesday at 4 pm for the budget review.”</li>
+              <li data-on="caret options sel-2 tab" data-ms="1600">⇥: the French version, “On se voit mardi à 16 h pour le point budget.”</li>
+              <li data-on="caret options sel-3 tab" data-ms="1500">⇥: the summary, “Budget review: Tuesday, 4 pm.”</li>
+              <li data-on="caret options sel-1 tab" data-ms="1200">⇥: back to English.</li>
+              <li data-on="caret options sel-1 enter" data-ms="700">↵: paste.</li>
+              <li data-on="caret inserted" data-ms="2600">The text is written into the document, right at the cursor.</li>
+              </ol>
+            </details>
+          </figure>
+
+          <figure class="demo" data-demo role="group" aria-label="Animated demo on Android: a finger taps the message field of a chat, the Dites bubble appears above the keyboard, you hold it to talk, then the review panel offers the clean text, which is inserted and sent.">
+            <div class="demo-stage phone-stage" aria-hidden="true">
+              <div class="phone">
+                <div class="phone-screen">
+                  <div class="chat-head"><span class="avatar"></span><span><b>Project team</b><small>3 members</small></span></div>
+                  <div class="chat-body">
+                    <div class="chat-msgs"><p class="msg msg-in"><span class="msg-who">Léa</span>Meeting starts in 5 minutes!</p><p class="msg msg-out">OK, on my way.</p><p class="msg msg-in"><span class="msg-who">Karim</span>Where are you?</p><p class="msg msg-out msg-new">I'm running 10 minutes late, start without me!</p></div>
+                    <div class="chat-input"><span class="field"><span class="ph">Message</span><span class="field-text">I'm running 10 minutes late, start without me!</span><span class="caret"></span></span><span class="send">↑</span></div>
+                  </div>
+                  <div class="kbd"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                  <div class="droid-raw"><span class="raw-label">You say</span>“yeah I'm running like ten minutes late uh start without me”</div>
+                  <div class="droid-bubble demo-droid"><span class="droid-dot"></span><span class="droid-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+                  <div class="droid-panel">
+                    <p class="panel-text">I'm running 10 minutes late, start without me!</p>
+                    <div class="opt-chips"><span class="chip c1">English</span><span class="chip c2">Français</span><span class="chip c3">Summary</span></div>
+                    <span class="panel-insert">Insert</span>
+                  </div>
+                  <span class="finger"></span>
+                </div>
+              </div>
+            </div>
+          <div class="demo-controls">
+            <button class="demo-btn" type="button" data-act="prev" aria-label="Previous step">←</button>
+            <button class="demo-btn demo-toggle" type="button" data-act="toggle" data-label-pause="Pause" data-label-play="Play" aria-pressed="false">Pause</button>
+            <button class="demo-btn" type="button" data-act="next" aria-label="Next step">→</button>
+            <p class="demo-caption"></p>
           </div>
+            <figcaption><span class="label">On Android</span> Hold the bubble, talk, let go.</figcaption>
+            <details class="demo-transcript">
+              <summary>Show the sequence as text</summary>
+              <ol class="demo-steps">
+              <li data-on="finger" data-ms="1000">A chat is open.</li>
+              <li data-on="finger f-field press kbd caret" data-ms="1000">A finger taps the message field: the keyboard opens.</li>
+              <li data-on="kbd caret bubble" data-ms="1100">The Dites bubble floats above the keyboard.</li>
+              <li data-on="kbd caret bubble finger f-bubble press rec" data-ms="1200">You hold the bubble: it switches to recording.</li>
+              <li data-on="kbd caret bubble finger f-bubble press rec raw" data-ms="2400">What you say, word for word: “yeah I'm running like ten minutes late uh start without me”.</li>
+              <li data-on="kbd caret bubble proc raw" data-ms="1200">You let go: polishing…</li>
+              <li data-on="kbd caret panel" data-ms="1300">The review panel shows the clean text: “I'm running 10 minutes late, start without me!”</li>
+              <li data-on="kbd caret panel sel-1" data-ms="1100">You pick an option.</li>
+              <li data-on="kbd caret panel sel-1 finger f-insert press" data-ms="900">You tap “Insert”.</li>
+              <li data-on="kbd field-text" data-ms="1200">The text lands in the field.</li>
+              <li data-on="kbd sent" data-ms="2600">The message is sent to the chat.</li>
+              </ol>
+            </details>
+          </figure>
         </div>
+        <p class="handsfree">Hands-free: tap <span class="key">right ⌥</span> or the bubble (under 0.3 s), then press again to finish. <span class="key">⎋</span> cancels.</p>
       </div>
     </section>
 
@@ -338,5 +410,6 @@
 
   <script src="/assets/js/config.js"></script>
   <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/demos.js"></script>
 </body>
 </html>

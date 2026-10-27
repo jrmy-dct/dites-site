@@ -103,48 +103,120 @@
       </div>
     </section>
 
-    <!-- 2. Comment ça marche -->
+    <!-- 2. Comment ça marche : démos animées (HTML/CSS, séquencées par assets/js/demos.js) -->
     <section id="fonctionnement" class="section">
       <div class="container">
         <div class="section-head">
           <span class="label">01 · Fonctionnement</span>
           <h2>Comment ça marche</h2>
-          <p class="section-lead">Trois temps, et tu n'as plus à taper.</p>
+          <p class="section-lead">Maintiens, parle, relâche. Le texte arrive là où tu es.</p>
         </div>
-        <ol class="steps">
-          <li class="card step">
-            <span class="step-num">01</span>
-            <h3>Parle</h3>
-            <p>Maintiens <span class="key">⌥ droite</span> pour parler, relâche pour terminer (raccourci modifiable dans les Réglages). Pour le mode mains libres, tapote-le (appui de moins de 0,3 s), puis appuie de nouveau pour terminer. <span class="key">⎋</span> annule. Sur Android, c'est la même chose avec la bulle au-dessus du clavier.</p>
-          </li>
-          <li class="card step">
-            <span class="step-num">02</span>
-            <h3>Transcription sur l'appareil</h3>
-            <p>Whisper transcrit ta voix directement sur ton Mac ou ton téléphone. L'audio ne quitte jamais l'appareil.</p>
-          </li>
-          <li class="card step">
-            <span class="step-num">03</span>
-            <h3>Le texte arrive là où tu es</h3>
-            <p>Dites colle le texte dans le champ actif : mail, messagerie, document, n'importe quelle app. En option, Claude le met en forme avant.</p>
-          </li>
-        </ol>
-        <div class="card android-row">
-          <div class="android-copy">
-            <p class="tag">Sur Android</p>
-            <h3>Une bulle au-dessus du clavier</h3>
-            <p>Une bulle au-dessus du clavier, dans n'importe quelle app. Maintiens-la pour parler, tapote-la pour le mode mains libres. La voix est reconnue sur le téléphone ; seul le texte part vers Claude, si la mise en forme est activée.</p>
+        <div class="demos">
+          <figure class="demo" data-demo role="group" aria-label="Démo animée sur Mac : un clic dans un document, la touche Option droite maintenue, la pilule d'enregistrement pendant que tu parles, puis la bulle d'options qui propose le texte propre en français, en anglais ou en synthèse, et le texte collé dans le document.">
+            <div class="demo-stage mac-stage" aria-hidden="true">
+              <div class="mac">
+                <div class="mac-screen">
+                  <div class="mac-display">
+                    <div class="win">
+                      <div class="win-bar"><span></span><span></span><span></span><em>Compte rendu.txt</em></div>
+                      <div class="doc">
+                        <i class="doc-l" style="width:92%"></i><i class="doc-l" style="width:78%"></i><i class="doc-l" style="width:86%"></i><i class="doc-l" style="width:44%"></i>
+                        <p class="doc-live"><span class="doc-insert">On se voit mardi à 16 h pour le point budget.</span><span class="caret"></span></p>
+                      </div>
+                    </div>
+                    <div class="demo-raw"><span class="raw-label">Tu dis</span>« euh donc on se voit mardi à 14h… non plutôt 16h pour le point budget hein »</div>
+                    <div class="demo-pill">
+                      <span class="rec-dot"></span>
+                      <span class="demo-level"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+                      <span class="demo-timer" data-timer>0:00</span>
+                      <span class="demo-proc">Mise en forme…</span>
+                    </div>
+                    <div class="demo-options">
+                      <div class="opt-texts"><p class="t1">On se voit mardi à 16 h pour le point budget.</p><p class="t2">Let's meet Tuesday at 4 pm for the budget review.</p><p class="t3">Point budget : mardi, 16 h.</p></div>
+                      <div class="opt-chips"><span class="chip c1">Français</span><span class="chip c2">English</span><span class="chip c3">Synthèse</span></div>
+                      <div class="opt-foot"><span><b class="dk dk-enter">↵</b>Coller</span><span><b class="dk">←</b><b class="dk">→</b><b class="dk dk-tab">⇥</b>Changer</span><span><b class="dk">⎋</b>Fermer</span></div>
+                    </div>
+                    <svg class="mouse" viewBox="0 0 16 22"><path d="M1 1v17l4.5-4.2 3 6.7 2.6-1.2-3-6.6H14z"/></svg>
+                    <span class="click-ring"></span>
+                  </div>
+                </div>
+                <div class="mac-base"></div>
+                <div class="mac-key"><span class="raw-label">Touche</span><span class="mac-keycap">⌥ droite</span></div>
+              </div>
+            </div>
+          <div class="demo-controls">
+            <button class="demo-btn" type="button" data-act="prev" aria-label="Étape précédente">←</button>
+            <button class="demo-btn demo-toggle" type="button" data-act="toggle" data-label-pause="Pause" data-label-play="Lecture" aria-pressed="false">Pause</button>
+            <button class="demo-btn" type="button" data-act="next" aria-label="Étape suivante">→</button>
+            <p class="demo-caption"></p>
           </div>
-          <div class="droid-demo" aria-hidden="true">
-            <figure class="droid-state">
-              <span class="droid-bubble"><span class="droid-dot"></span><span class="droid-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></span>
-              <figcaption>Au repos</figcaption>
-            </figure>
-            <figure class="droid-state">
-              <span class="droid-bubble is-recording"><span class="droid-dot"></span><span class="droid-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></span>
-              <figcaption>Enregistrement</figcaption>
-            </figure>
+            <figcaption><span class="label">Sur Mac</span> Maintiens <span class="key">⌥ droite</span>, parle, relâche.</figcaption>
+            <details class="demo-transcript">
+              <summary>Voir la séquence en texte</summary>
+              <ol class="demo-steps">
+              <li data-on="mouse" data-ms="1100">Le curseur de la souris va dans le document.</li>
+              <li data-on="mouse m-doc click caret" data-ms="1000">Clic : le curseur texte clignote.</li>
+              <li data-on="mouse m-doc caret key" data-ms="1000">Tu maintiens ⌥ droite.</li>
+              <li data-on="caret key pill rec" data-ms="1400">La pilule d'enregistrement apparaît : tu parles.</li>
+              <li data-on="caret key pill rec raw" data-ms="2400">Ce que tu dis, tel quel : « euh donc on se voit mardi à 14h… non plutôt 16h pour le point budget hein ».</li>
+              <li data-on="caret keyup pill proc raw" data-ms="1300">Tu relâches la touche : mise en forme…</li>
+              <li data-on="caret options sel-1" data-ms="1800">La bulle d'options propose le texte propre : « On se voit mardi à 16 h pour le point budget. »</li>
+              <li data-on="caret options sel-2 tab" data-ms="1600">⇥ : la version anglaise, « Let's meet Tuesday at 4 pm for the budget review. »</li>
+              <li data-on="caret options sel-3 tab" data-ms="1500">⇥ : la synthèse, « Point budget : mardi, 16 h. »</li>
+              <li data-on="caret options sel-1 tab" data-ms="1200">⇥ : retour au français.</li>
+              <li data-on="caret options sel-1 enter" data-ms="700">↵ : coller.</li>
+              <li data-on="caret inserted" data-ms="2600">Le texte s'écrit dans le document, à l'emplacement du curseur.</li>
+              </ol>
+            </details>
+          </figure>
+
+          <figure class="demo" data-demo role="group" aria-label="Démo animée sur Android : un doigt touche le champ d'une conversation, la bulle Dites apparaît au-dessus du clavier, on la maintient pour parler, puis le panneau de relecture propose le texte propre, qui est inséré puis envoyé.">
+            <div class="demo-stage phone-stage" aria-hidden="true">
+              <div class="phone">
+                <div class="phone-screen">
+                  <div class="chat-head"><span class="avatar"></span><span><b>Équipe projet</b><small>3 membres</small></span></div>
+                  <div class="chat-body">
+                    <div class="chat-msgs"><p class="msg msg-in"><span class="msg-who">Léa</span>On commence la réunion dans 5 min !</p><p class="msg msg-out">Ok, j'arrive.</p><p class="msg msg-in"><span class="msg-who">Karim</span>Tu es où ?</p><p class="msg msg-out msg-new">Je suis en retard de 10 minutes, commencez sans moi !</p></div>
+                    <div class="chat-input"><span class="field"><span class="ph">Message</span><span class="field-text">Je suis en retard de 10 minutes, commencez sans moi !</span><span class="caret"></span></span><span class="send">↑</span></div>
+                  </div>
+                  <div class="kbd"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                  <div class="droid-raw"><span class="raw-label">Tu dis</span>« ouais je suis en retard de dix minutes euh commencez sans moi »</div>
+                  <div class="droid-bubble demo-droid"><span class="droid-dot"></span><span class="droid-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+                  <div class="droid-panel">
+                    <p class="panel-text">Je suis en retard de 10 minutes, commencez sans moi !</p>
+                    <div class="opt-chips"><span class="chip c1">Français</span><span class="chip c2">English</span><span class="chip c3">Synthèse</span></div>
+                    <span class="panel-insert">Insérer</span>
+                  </div>
+                  <span class="finger"></span>
+                </div>
+              </div>
+            </div>
+          <div class="demo-controls">
+            <button class="demo-btn" type="button" data-act="prev" aria-label="Étape précédente">←</button>
+            <button class="demo-btn demo-toggle" type="button" data-act="toggle" data-label-pause="Pause" data-label-play="Lecture" aria-pressed="false">Pause</button>
+            <button class="demo-btn" type="button" data-act="next" aria-label="Étape suivante">→</button>
+            <p class="demo-caption"></p>
           </div>
+            <figcaption><span class="label">Sur Android</span> Maintiens la bulle, parle, relâche.</figcaption>
+            <details class="demo-transcript">
+              <summary>Voir la séquence en texte</summary>
+              <ol class="demo-steps">
+              <li data-on="finger" data-ms="1000">Une conversation est ouverte.</li>
+              <li data-on="finger f-field press kbd caret" data-ms="1000">Le doigt touche le champ de saisie : le clavier s'ouvre.</li>
+              <li data-on="kbd caret bubble" data-ms="1100">La bulle Dites flotte au-dessus du clavier.</li>
+              <li data-on="kbd caret bubble finger f-bubble press rec" data-ms="1200">Tu maintiens la bulle : elle passe en enregistrement.</li>
+              <li data-on="kbd caret bubble finger f-bubble press rec raw" data-ms="2400">Ce que tu dis, tel quel : « ouais je suis en retard de dix minutes euh commencez sans moi ».</li>
+              <li data-on="kbd caret bubble proc raw" data-ms="1200">Tu relâches : mise en forme…</li>
+              <li data-on="kbd caret panel" data-ms="1300">Le panneau de relecture affiche le texte propre : « Je suis en retard de 10 minutes, commencez sans moi ! »</li>
+              <li data-on="kbd caret panel sel-1" data-ms="1100">Tu choisis une option.</li>
+              <li data-on="kbd caret panel sel-1 finger f-insert press" data-ms="900">Tu touches « Insérer ».</li>
+              <li data-on="kbd field-text" data-ms="1200">Le texte arrive dans le champ.</li>
+              <li data-on="kbd sent" data-ms="2600">Le message part dans la conversation.</li>
+              </ol>
+            </details>
+          </figure>
         </div>
+        <p class="handsfree">Mains libres : tapote <span class="key">⌥ droite</span> ou la bulle (moins de 0,3 s), puis appuie de nouveau pour terminer. <span class="key">⎋</span> annule.</p>
       </div>
     </section>
 
@@ -338,5 +410,6 @@
 
   <script src="/assets/js/config.js"></script>
   <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/demos.js"></script>
 </body>
 </html>
