@@ -13,8 +13,8 @@ assets/
   css/style.css         Styles (thèmes clair et sombre via variables CSS)
   js/config.js          ← liens de téléchargement et flux de mise à jour (seul fichier à modifier)
   js/main.js            Injection des liens, bascule de thème
-  img/logo.svg          Logo provisoire
-  img/favicon.svg       Favicon provisoire
+  img/logo.svg          Icône de l'app
+  img/favicon.svg       Icône de barre des menus (favicon)
   img/screenshots/      Emplacements de captures (SVG à remplacer)
 updates/
   mac/appcast.xml       Flux Sparkle (exemple)
@@ -34,7 +34,11 @@ Les valeurs actuelles sont fictives.
 
 ## Captures d'écran
 
-Remplacez les fichiers de `assets/img/screenshots/` en gardant les mêmes noms, ou changez les `src` dans `index.html` pour du PNG ou du WebP. Formats prévus : 1200 × 750 pour le Mac, 600 × 1200 pour Android.
+Remplacez les fichiers de `assets/img/screenshots/` en gardant les mêmes noms, ou changez les `src` dans `index.html` et `en/index.html` pour du PNG ou du WebP. Réglages Mac : 760 × 1100 pt, à fournir en @2x (1520 × 2200 px), une version claire (`reglages-clair`) et une sombre (`reglages-sombre`). Android : 600 × 1200 en attendant le ratio exact. La pilule d'enregistrement et la bulle d'options sont en HTML/CSS : pas de capture nécessaire.
+
+## Identité visuelle
+
+Calquée sur `Theme.swift` de l'app : papier vert sauge, encre presque noire, filets de 1 px, étiquettes mono en majuscules, aucune ombre sur les cartes, un seul accent (orange brûlé) réservé au point d'enregistrement. Les couleurs sont des variables CSS en tête de `assets/css/style.css`. Seul écart : la couleur `muted` du thème clair est légèrement foncée (#646C61 au lieu de #6B7368) pour un contraste AA sur le web.
 
 ## Langues
 

@@ -6,9 +6,10 @@
   <title>Dites — voice dictation that writes for you</title>
   <meta name="description" content="Dites turns your voice into text in any app, on Mac and Android. Transcribed on your device, optionally polished by Claude. Free.">
   <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#fbf8f4" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#16131a" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#e6ece1" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141814" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/logo.svg">
   <link rel="canonical" href="https://dites.app/en/">
   <link rel="alternate" hreflang="fr" href="https://dites.app/">
   <link rel="alternate" hreflang="en" href="https://dites.app/en/">
@@ -31,7 +32,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="/en/" aria-label="Dites, home">
-        <img src="/assets/img/logo.svg" alt="" width="28" height="28">
+        <svg class="brand-mark" viewBox="0 0 24 14" aria-hidden="true"><rect x="0.75" y="0.75" width="22.5" height="12.5" rx="6.25" fill="none" stroke="currentColor" stroke-width="1.5"/><g fill="currentColor"><rect x="5.2" y="5.75" width="1.6" height="2.5" rx="0.8"/><rect x="8.2" y="4.5" width="1.6" height="5" rx="0.8"/><rect x="11.2" y="3.75" width="1.6" height="6.5" rx="0.8"/><rect x="14.2" y="5" width="1.6" height="4" rx="0.8"/><rect x="17.2" y="6" width="1.6" height="2" rx="0.8"/></g></svg>
         <span>Dites</span>
       </a>
       <nav aria-label="Main navigation">
@@ -45,7 +46,7 @@
       </nav>
       <p class="lang-switch" aria-label="Language">
         <a href="/" lang="fr" hreflang="fr">FR</a>
-        <span aria-hidden="true">|</span>
+        <span aria-hidden="true">·</span>
         <a href="/en/" lang="en" hreflang="en" aria-current="true">EN</a>
       </p>
       <button class="theme-toggle" type="button" data-theme-toggle data-label-to-light="Switch to light theme" data-label-to-dark="Switch to dark theme" aria-pressed="false" aria-label="Toggle theme">
@@ -60,7 +61,7 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-text">
-          <p class="eyebrow">Voice dictation for Mac and Android</p>
+          <p class="eyebrow">Voice dictation · Mac and Android</p>
           <h1>Say it. It's written.</h1>
           <p class="lead">Talk, and your words land in whatever app you're using. Your voice is transcribed on your device, and Claude can tidy it up whenever you want.</p>
           <div class="cta-row">
@@ -73,21 +74,29 @@
               Download for Android
             </a>
           </div>
-          <p class="cta-note">Free. macOS 14+ and Android 12+. iOS coming soon. <a href="#install">Install guide</a></p>
+          <p class="cta-note">Free · macOS 14+ and Android 12+ · iOS coming soon · <a href="#install">Install guide</a></p>
         </div>
 
+        <!-- Recording pill and options bubble, recreated from the app in HTML/CSS. -->
         <div class="hero-visual" aria-hidden="true">
-          <div class="mock-window">
-            <div class="mock-bar"><span></span><span></span><span></span></div>
-            <div class="mock-body">
-              <p class="mock-label">New message</p>
-              <p class="mock-text">Hi Sam, confirming our meeting on Thursday at 4 pm. I'll send the file over by tomorrow.<span class="caret"></span></p>
-            </div>
+          <div class="pill">
+            <span class="rec-dot"></span>
+            <span class="level"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+            <span class="timer">0:07</span>
+            <span class="hint">Hands-free · ⎋ cancels</span>
           </div>
-          <div class="mock-pill">
-            <span class="mic-dot"></span>
-            <span class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
-            <span class="pill-label">Style: email</span>
+          <div class="bubble">
+            <p class="bubble-text">Hi Sam, confirming Thursday at 4 pm. I'll send the file over by tomorrow.</p>
+            <ul class="chips">
+              <li class="chip">Français</li>
+              <li class="chip is-selected">English</li>
+              <li class="chip">Summary</li>
+            </ul>
+            <div class="bubble-foot">
+              <span class="hint">↵ Paste</span>
+              <span class="hint">← → ⇥ Switch</span>
+              <span class="hint">⎋ Close</span>
+            </div>
           </div>
         </div>
       </div>
@@ -96,21 +105,24 @@
     <!-- 2. How it works -->
     <section id="how-it-works" class="section">
       <div class="container">
-        <h2>How it works</h2>
-        <p class="section-lead">Three steps, and no more typing.</p>
+        <div class="section-head">
+          <span class="label">01 · How it works</span>
+          <h2>How it works</h2>
+          <p class="section-lead">Three steps, and no more typing.</p>
+        </div>
         <ol class="steps">
-          <li class="step">
-            <span class="step-num" aria-hidden="true">1</span>
+          <li class="card step">
+            <span class="step-num">01</span>
             <h3>Talk</h3>
-            <p>Hold your shortcut and speak, or go hands-free. On Mac, Dites sits quietly in the menu bar.</p>
+            <p>Hold your shortcut to talk, let go to finish. For hands-free, tap it (release within 0.3 s), then press again to finish. <span class="key">⎋</span> cancels. On Mac, Dites lives in the menu bar.</p>
           </li>
-          <li class="step">
-            <span class="step-num" aria-hidden="true">2</span>
+          <li class="card step">
+            <span class="step-num">02</span>
             <h3>Transcribed on your device</h3>
             <p>Whisper turns your voice into text right on your Mac or phone. The audio never leaves your device.</p>
           </li>
-          <li class="step">
-            <span class="step-num" aria-hidden="true">3</span>
+          <li class="card step">
+            <span class="step-num">03</span>
             <h3>Text lands where you are</h3>
             <p>Dites pastes the text into the active field: email, chat, documents, any app. Optionally, Claude polishes it first.</p>
           </li>
@@ -119,12 +131,15 @@
     </section>
 
     <!-- 3. Features: two levels -->
-    <section id="features" class="section section-alt">
+    <section id="features" class="section">
       <div class="container">
-        <h2>Two levels, your call</h2>
-        <p class="section-lead">Out of the box, Dites is real dictation. Add your Anthropic key and Claude turns what you say into text that's ready to send.</p>
+        <div class="section-head">
+          <span class="label">02 · Features</span>
+          <h2>Two levels, your call</h2>
+          <p class="section-lead">Out of the box, Dites is real dictation. Add your Anthropic key and Claude turns what you say into text that's ready to send.</p>
+        </div>
         <div class="tiers">
-          <article class="tier">
+          <article class="card tier">
             <p class="tag">No key · everything stays on your device</p>
             <h3>Dictation, done right</h3>
             <ul class="tier-list">
@@ -134,8 +149,8 @@
               <li><strong>Text shortcuts</strong>: say “signature” and the full block appears</li>
             </ul>
           </article>
-          <article class="tier tier-plus">
-            <p class="tag">With your Anthropic key · everything above, plus</p>
+          <article class="card tier">
+            <p class="tag tag-filled">With your Anthropic key · level 1, plus</p>
             <h3>Text that's ready to send</h3>
             <ul class="tier-list">
               <li><strong>No more “um”</strong>: filler words are removed</li>
@@ -149,40 +164,43 @@
         <p class="tier-note">Polishing runs on Claude today. More models, including GPT, are coming later.</p>
 
         <div class="gallery">
-          <!-- Screenshots: replace the files in /assets/img/screenshots/ (same names) or change the src. -->
+          <!-- Settings screenshots: 760 × 1100 pt, supplied @2x (1520 × 2200 px). Replace the files in /assets/img/screenshots/ or change the src. -->
           <figure class="shot">
-            <img src="/assets/img/screenshots/mac-barre-menus.svg" alt="Dites in the Mac menu bar during dictation" width="1200" height="750" loading="lazy">
-            <figcaption>On Mac, in the menu bar</figcaption>
+            <img src="/assets/img/screenshots/reglages-clair.svg" alt="Dites settings on Mac, light theme" width="760" height="1100" loading="lazy">
+            <figcaption>Settings · light theme</figcaption>
           </figure>
           <figure class="shot">
-            <img src="/assets/img/screenshots/mac-styles.svg" alt="Styles and personal dictionary settings in Dites" width="1200" height="750" loading="lazy">
-            <figcaption>Styles, dictionary and shortcuts</figcaption>
+            <img src="/assets/img/screenshots/reglages-sombre.svg" alt="Dites settings on Mac, dark theme" width="760" height="1100" loading="lazy">
+            <figcaption>Settings · dark theme</figcaption>
           </figure>
-          <figure class="shot shot-phone">
+          <figure class="shot">
             <img src="/assets/img/screenshots/android.svg" alt="Dites on an Android phone" width="600" height="1200" loading="lazy">
-            <figcaption>On Android</figcaption>
+            <figcaption>Android</figcaption>
           </figure>
         </div>
       </div>
     </section>
 
     <!-- 4. Privacy -->
-    <section id="privacy" class="section privacy">
+    <section id="privacy" class="section">
       <div class="container">
-        <h2>Your voice stays with you</h2>
-        <p class="section-lead">Transcription happens on your device. You decide whether any text leaves it.</p>
+        <div class="section-head">
+          <span class="label">03 · Privacy</span>
+          <h2>Your voice stays with you</h2>
+          <p class="section-lead">Transcription happens on your device. You decide whether any text leaves it.</p>
+        </div>
         <div class="privacy-grid">
-          <article class="privacy-card">
+          <article class="card">
             <p class="tag">No key</p>
             <h3>Nothing leaves your device</h3>
             <p>Dites transcribes locally and pastes the text, with your dictionary and shortcuts applied. No data is sent anywhere.</p>
           </article>
-          <article class="privacy-card">
+          <article class="card">
             <p class="tag">With your Anthropic key</p>
             <h3>Only text is sent, never audio</h3>
             <p>The transcribed text goes to Anthropic, using your own key, so Claude can polish it. The audio itself never leaves your device.</p>
           </article>
-          <article class="privacy-card">
+          <article class="card">
             <p class="tag">Free</p>
             <h3>Your key, your terms</h3>
             <p>Dites is free and doesn't sit in the middle: Anthropic bills you directly for what you use, and only if you choose to.</p>
@@ -193,11 +211,12 @@
     </section>
 
     <!-- 5. Optional account -->
-    <section id="account" class="section section-alt">
+    <section id="account" class="section">
       <div class="container split">
-        <div>
+        <div class="section-head">
+          <span class="label">04 · Account</span>
           <h2>An account? Only if you want one.</h2>
-          <p>Dites works fully without an account. Create one and your dictionary, shortcuts, prompts and styles follow you to every device.</p>
+          <p class="section-lead">Dites works fully without an account. Create one and your dictionary, shortcuts, prompts and styles follow you to every device.</p>
         </div>
         <ul class="checklist">
           <li>Every feature, no sign-up required</li>
@@ -210,12 +229,15 @@
     <!-- 6. Install -->
     <section id="install" class="section">
       <div class="container">
-        <h2>Install</h2>
-        <p class="section-lead">Dites is distributed outside the app stores. Here's exactly what to expect, no surprises.</p>
+        <div class="section-head">
+          <span class="label">05 · Install</span>
+          <h2>Install</h2>
+          <p class="section-lead">Dites is distributed outside the app stores. Here's exactly what to expect, no surprises.</p>
+        </div>
         <div class="install-grid">
-          <article class="install-card">
+          <article class="card install-card">
             <h3>Mac</h3>
-            <p class="install-req">macOS 14 (Sonoma) or later. Apple Silicon Mac recommended.</p>
+            <p class="install-req">macOS 14 (Sonoma) or later · Apple Silicon recommended</p>
             <ol class="install-steps">
               <li>Download <strong>Dites.dmg</strong> and drag Dites into your Applications folder.</li>
               <li>The app isn't notarized by Apple, so macOS blocks the first launch. Open <strong>System Settings &gt; Privacy &amp; Security</strong> and click <strong>“Open Anyway”</strong>.</li>
@@ -224,9 +246,9 @@
             </ol>
             <a class="btn btn-primary" data-download="mac" href="#install">Download for Mac</a>
           </article>
-          <article class="install-card">
+          <article class="card install-card">
             <h3>Android</h3>
-            <p class="install-req">Android 12 or later.</p>
+            <p class="install-req">Android 12 or later</p>
             <ol class="install-steps">
               <li>Download <strong>Dites.apk</strong> on your phone. The app isn't on the Play Store.</li>
               <li>Android asks you to allow installs from this source (your browser or file manager). Allow it, then install.</li>
@@ -240,9 +262,12 @@
     </section>
 
     <!-- 7. FAQ -->
-    <section id="faq" class="section section-alt">
+    <section id="faq" class="section">
       <div class="container narrow">
-        <h2>FAQ</h2>
+        <div class="section-head">
+          <span class="label">06 · FAQ</span>
+          <h2>FAQ</h2>
+        </div>
         <div class="faq">
           <details>
             <summary>How much does it cost?</summary>
@@ -251,6 +276,10 @@
           <details>
             <summary>What can I do without a key?</summary>
             <p>The essentials: on-device transcription, basic punctuation and capitalization, your personal dictionary and text shortcuts. A key adds filler-word removal, spoken corrections, formatting, styles, translation and summaries.</p>
+          </details>
+          <details>
+            <summary>How does hands-free mode work?</summary>
+            <p>Tap your shortcut (release it within 0.3 s) and recording keeps going without holding the key. Press it again to finish, or <span class="key">⎋</span> to cancel.</p>
           </details>
           <details>
             <summary>What happens to my data?</summary>
@@ -283,12 +312,9 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <a class="brand" href="/en/" aria-label="Dites, home">
-        <img src="/assets/img/logo.svg" alt="" width="24" height="24">
-        <span>Dites</span>
-      </a>
-      <p>Voice dictation for Mac and Android. <span lang="fr">Dites</span> is French for “say”. Claude is a trademark of Anthropic; Dites is not affiliated with Anthropic.</p>
-      <p class="footer-meta">© <span data-year>2026</span> Dites · <a href="/" lang="fr" hreflang="fr">Français</a></p>
+      <img class="footer-icon" src="/assets/img/logo.svg" alt="" width="44" height="44">
+      <p>Dites · voice dictation for Mac and Android. <span lang="fr">Dites</span> is French for “say”. Claude is a trademark of Anthropic; Dites is not affiliated with Anthropic.</p>
+      <p>© <span data-year>2026</span> Dites · <a href="/" lang="fr" hreflang="fr">Français</a></p>
     </div>
   </footer>
 

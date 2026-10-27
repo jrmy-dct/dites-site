@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 1100" width="760" height="1100">
+  <!-- Emplacement de capture d'écran : remplacer ce fichier (même nom, ou PNG/WebP @2x en changeant le src dans les pages). -->
+  <rect width="760" height="1100" fill="#141814"/>
+  <rect x="24" y="24" width="712" height="1052" rx="18" fill="none" stroke="#8C9688" stroke-width="2" stroke-dasharray="10 10"/>
+  <text x="50%" y="48%" text-anchor="middle" font-family="ui-monospace, SF Mono, Menlo, monospace" font-size="26" font-weight="600" fill="#DDE5D6">RÉGLAGES · SOMBRE</text>
+  <text x="50%" y="52%" text-anchor="middle" font-family="ui-monospace, SF Mono, Menlo, monospace" font-size="18" fill="#8C9688">CAPTURE À VENIR · 760 × 1100</text>
+</svg>

@@ -3,18 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dites — la dictée vocale qui écrit pour vous</title>
-  <meta name="description" content="Dites transforme votre voix en texte dans n'importe quelle app, sur Mac et Android. Transcription sur l'appareil, mise en forme par Claude en option. Gratuite.">
+  <title>Dites — la dictée vocale qui écrit pour toi</title>
+  <meta name="description" content="Dites transforme ta voix en texte dans n'importe quelle app, sur Mac et Android. Transcription sur l'appareil, mise en forme par Claude en option. Gratuite.">
   <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#fbf8f4" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#16131a" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#e6ece1" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141814" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/logo.svg">
   <link rel="canonical" href="https://dites.app/">
   <link rel="alternate" hreflang="fr" href="https://dites.app/">
   <link rel="alternate" hreflang="en" href="https://dites.app/en/">
   <link rel="alternate" hreflang="x-default" href="https://dites.app/">
   <meta property="og:title" content="Dites. C'est écrit.">
-  <meta property="og:description" content="Parlez, votre texte s'écrit dans n'importe quelle app. Dictée vocale pour Mac et Android, transcrite sur votre appareil.">
+  <meta property="og:description" content="Parle, ton texte s'écrit dans n'importe quelle app. Dictée vocale pour Mac et Android, transcrite sur ton appareil.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://dites.app/">
   <meta property="og:site_name" content="Dites">
@@ -31,7 +32,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="/" aria-label="Dites, accueil">
-        <img src="/assets/img/logo.svg" alt="" width="28" height="28">
+        <svg class="brand-mark" viewBox="0 0 24 14" aria-hidden="true"><rect x="0.75" y="0.75" width="22.5" height="12.5" rx="6.25" fill="none" stroke="currentColor" stroke-width="1.5"/><g fill="currentColor"><rect x="5.2" y="5.75" width="1.6" height="2.5" rx="0.8"/><rect x="8.2" y="4.5" width="1.6" height="5" rx="0.8"/><rect x="11.2" y="3.75" width="1.6" height="6.5" rx="0.8"/><rect x="14.2" y="5" width="1.6" height="4" rx="0.8"/><rect x="17.2" y="6" width="1.6" height="2" rx="0.8"/></g></svg>
         <span>Dites</span>
       </a>
       <nav aria-label="Navigation principale">
@@ -45,7 +46,7 @@
       </nav>
       <p class="lang-switch" aria-label="Langue">
         <a href="/" lang="fr" hreflang="fr" aria-current="true">FR</a>
-        <span aria-hidden="true">|</span>
+        <span aria-hidden="true">·</span>
         <a href="/en/" lang="en" hreflang="en">EN</a>
       </p>
       <button class="theme-toggle" type="button" data-theme-toggle data-label-to-light="Passer en thème clair" data-label-to-dark="Passer en thème sombre" aria-pressed="false" aria-label="Changer de thème">
@@ -60,9 +61,9 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-text">
-          <p class="eyebrow">Dictée vocale pour Mac et Android</p>
+          <p class="eyebrow">Dictée vocale · Mac et Android</p>
           <h1>Dites. C'est écrit.</h1>
-          <p class="lead">Parlez, votre texte s'écrit, dans n'importe quelle app. Votre voix est transcrite sur votre appareil, et Claude peut la mettre au propre si vous le souhaitez.</p>
+          <p class="lead">Parle, ton texte s'écrit dans n'importe quelle app. Ta voix est transcrite sur ton appareil, et Claude peut la mettre au propre si tu le souhaites.</p>
           <div class="cta-row">
             <a class="btn btn-primary" data-download="mac" href="#installation">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.2-2.8.8-3.5.8s-1.8-.8-3-.8C6.9 7.3 5.4 8.2 4.6 9.6c-1.7 2.9-.4 7.2 1.2 9.6.8 1.2 1.7 2.4 2.9 2.4 1.2-.1 1.6-.8 3-.8s1.8.8 3 .8c1.3 0 2.1-1.2 2.8-2.3.9-1.3 1.3-2.6 1.3-2.7 0 0-2.4-.9-2.4-3.9zM14.1 5.5c.6-.8 1.1-1.8 1-2.9-.9 0-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.8 1 .1 2.1-.5 2.7-1.3z"/></svg>
@@ -73,21 +74,29 @@
               Télécharger pour Android
             </a>
           </div>
-          <p class="cta-note">Gratuite. macOS 14+ et Android 12+. iOS bientôt. <a href="#installation">Guide d'installation</a></p>
+          <p class="cta-note">Gratuite · macOS 14+ et Android 12+ · iOS bientôt · <a href="#installation">Guide d'installation</a></p>
         </div>
 
+        <!-- Pilule d'enregistrement et bulle d'options, reproduites de l'app en HTML/CSS. -->
         <div class="hero-visual" aria-hidden="true">
-          <div class="mock-window">
-            <div class="mock-bar"><span></span><span></span><span></span></div>
-            <div class="mock-body">
-              <p class="mock-label">Nouveau message</p>
-              <p class="mock-text">Bonjour Camille, je confirme notre rendez-vous de jeudi à 16 h. Je vous envoie le dossier d'ici demain.<span class="caret"></span></p>
-            </div>
+          <div class="pill">
+            <span class="rec-dot"></span>
+            <span class="level"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+            <span class="timer">0:07</span>
+            <span class="hint">Mains libres · ⎋ annule</span>
           </div>
-          <div class="mock-pill">
-            <span class="mic-dot"></span>
-            <span class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
-            <span class="pill-label">Style : mail</span>
+          <div class="bubble">
+            <p class="bubble-text">Salut Camille, je te confirme jeudi à 16 h. Je t'envoie le dossier d'ici demain.</p>
+            <ul class="chips">
+              <li class="chip is-selected">Français</li>
+              <li class="chip">English</li>
+              <li class="chip">Synthèse</li>
+            </ul>
+            <div class="bubble-foot">
+              <span class="hint">↵ Coller</span>
+              <span class="hint">← → ⇥ Changer</span>
+              <span class="hint">⎋ Fermer</span>
+            </div>
           </div>
         </div>
       </div>
@@ -96,22 +105,25 @@
     <!-- 2. Comment ça marche -->
     <section id="fonctionnement" class="section">
       <div class="container">
-        <h2>Comment ça marche</h2>
-        <p class="section-lead">Trois temps, et vous n'avez plus à taper.</p>
+        <div class="section-head">
+          <span class="label">01 · Fonctionnement</span>
+          <h2>Comment ça marche</h2>
+          <p class="section-lead">Trois temps, et tu n'as plus à taper.</p>
+        </div>
         <ol class="steps">
-          <li class="step">
-            <span class="step-num" aria-hidden="true">1</span>
-            <h3>Parlez</h3>
-            <p>Maintenez votre raccourci clavier et parlez, ou passez en mode mains libres. Sur Mac, Dites vit discrètement dans la barre des menus.</p>
+          <li class="card step">
+            <span class="step-num">01</span>
+            <h3>Parle</h3>
+            <p>Maintiens ton raccourci pour parler, relâche pour terminer. Pour le mode mains libres, tapote-le (appui de moins de 0,3 s), puis appuie de nouveau pour terminer. <span class="key">⎋</span> annule. Sur Mac, Dites vit dans la barre des menus.</p>
           </li>
-          <li class="step">
-            <span class="step-num" aria-hidden="true">2</span>
+          <li class="card step">
+            <span class="step-num">02</span>
             <h3>Transcription sur l'appareil</h3>
-            <p>Whisper transcrit votre voix directement sur votre Mac ou votre téléphone. L'audio ne quitte jamais l'appareil.</p>
+            <p>Whisper transcrit ta voix directement sur ton Mac ou ton téléphone. L'audio ne quitte jamais l'appareil.</p>
           </li>
-          <li class="step">
-            <span class="step-num" aria-hidden="true">3</span>
-            <h3>Le texte arrive là où vous êtes</h3>
+          <li class="card step">
+            <span class="step-num">03</span>
+            <h3>Le texte arrive là où tu es</h3>
             <p>Dites colle le texte dans le champ actif : mail, messagerie, document, n'importe quelle app. En option, Claude le met en forme avant.</p>
           </li>
         </ol>
@@ -119,29 +131,32 @@
     </section>
 
     <!-- 3. Fonctionnalités : deux niveaux -->
-    <section id="fonctionnalites" class="section section-alt">
+    <section id="fonctionnalites" class="section">
       <div class="container">
-        <h2>Deux niveaux, à vous de choisir</h2>
-        <p class="section-lead">Sans rien configurer, Dites fait déjà de la vraie dictée. Ajoutez votre clé Anthropic et Claude transforme ce que vous dites en texte prêt à envoyer.</p>
+        <div class="section-head">
+          <span class="label">02 · Fonctionnalités</span>
+          <h2>Deux niveaux, à toi de choisir</h2>
+          <p class="section-lead">Sans rien configurer, Dites fait déjà de la vraie dictée. Ajoute ta clé Anthropic, et Claude transforme ce que tu dis en texte prêt à envoyer.</p>
+        </div>
         <div class="tiers">
-          <article class="tier">
+          <article class="card tier">
             <p class="tag">Sans clé · tout reste sur l'appareil</p>
             <h3>La dictée, simplement</h3>
             <ul class="tier-list">
               <li><strong>Transcription sur l'appareil</strong>, avec Whisper</li>
               <li><strong>Ponctuation et majuscules</strong> de base</li>
               <li><strong>Dictionnaire personnel</strong> : noms propres, jargon et noms d'entreprises mieux reconnus</li>
-              <li><strong>Raccourcis de texte</strong> : dites « signature » et le bloc complet s'insère</li>
+              <li><strong>Raccourcis de texte</strong> : dis « signature » et le bloc complet s'insère</li>
             </ul>
           </article>
-          <article class="tier tier-plus">
-            <p class="tag">Avec votre clé Anthropic · tout le niveau 1, plus</p>
+          <article class="card tier">
+            <p class="tag tag-filled">Avec ta clé Anthropic · niveau 1, plus</p>
             <h3>Un texte prêt à envoyer</h3>
             <ul class="tier-list">
-              <li><strong>Fini les « euh »</strong> : vos tics de langage sont retirés</li>
+              <li><strong>Fini les « euh »</strong> : tes tics de langage sont retirés</li>
               <li><strong>Corrections à voix haute</strong> : « jeudi à 14 h… non, plutôt 16 h » donne « jeudi à 16 h »</li>
               <li><strong>Mise en forme</strong> : paragraphes et listes</li>
-              <li><strong>Styles selon l'app</strong> : mail, message, note… et les vôtres</li>
+              <li><strong>Styles selon l'app</strong> : mail, message, note… et les tiens</li>
               <li><strong>Prompts de transformation</strong> : traduire, résumer, rendre plus direct</li>
             </ul>
           </article>
@@ -149,60 +164,64 @@
         <p class="tier-note">La mise en forme passe par Claude aujourd'hui. D'autres modèles, dont GPT, arriveront plus tard.</p>
 
         <div class="gallery">
-          <!-- Captures d'écran : remplacer les fichiers dans /assets/img/screenshots/ (mêmes noms) ou changer les src. -->
+          <!-- Captures des Réglages : 760 × 1100 pt, à fournir en @2x (1520 × 2200 px). Remplacer les fichiers de /assets/img/screenshots/ ou changer les src. -->
           <figure class="shot">
-            <img src="/assets/img/screenshots/mac-barre-menus.svg" alt="Dites dans la barre des menus du Mac pendant une dictée" width="1200" height="750" loading="lazy">
-            <figcaption>Sur Mac, dans la barre des menus</figcaption>
+            <img src="/assets/img/screenshots/reglages-clair.svg" alt="Réglages de Dites sur Mac, en thème clair" width="760" height="1100" loading="lazy">
+            <figcaption>Réglages · thème clair</figcaption>
           </figure>
           <figure class="shot">
-            <img src="/assets/img/screenshots/mac-styles.svg" alt="Réglages des styles et du dictionnaire personnel dans Dites" width="1200" height="750" loading="lazy">
-            <figcaption>Styles, dictionnaire et raccourcis</figcaption>
+            <img src="/assets/img/screenshots/reglages-sombre.svg" alt="Réglages de Dites sur Mac, en thème sombre" width="760" height="1100" loading="lazy">
+            <figcaption>Réglages · thème sombre</figcaption>
           </figure>
-          <figure class="shot shot-phone">
+          <figure class="shot">
             <img src="/assets/img/screenshots/android.svg" alt="Dites sur un téléphone Android" width="600" height="1200" loading="lazy">
-            <figcaption>Sur Android</figcaption>
+            <figcaption>Android</figcaption>
           </figure>
         </div>
       </div>
     </section>
 
     <!-- 4. Vie privée -->
-    <section id="confidentialite" class="section privacy">
+    <section id="confidentialite" class="section">
       <div class="container">
-        <h2>Votre voix reste chez vous</h2>
-        <p class="section-lead">La transcription se fait sur votre appareil. C'est vous qui décidez si du texte en sort.</p>
+        <div class="section-head">
+          <span class="label">03 · Vie privée</span>
+          <h2>Ta voix reste chez toi</h2>
+          <p class="section-lead">La transcription se fait sur ton appareil. C'est toi qui décides si du texte en sort.</p>
+        </div>
         <div class="privacy-grid">
-          <article class="privacy-card">
+          <article class="card">
             <p class="tag">Sans clé</p>
             <h3>Rien ne sort de l'appareil</h3>
-            <p>Dites transcrit localement et colle le texte, avec votre dictionnaire et vos raccourcis. Aucune donnée n'est envoyée.</p>
+            <p>Dites transcrit localement et colle le texte, avec ton dictionnaire et tes raccourcis. Aucune donnée n'est envoyée.</p>
           </article>
-          <article class="privacy-card">
-            <p class="tag">Avec votre clé Anthropic</p>
+          <article class="card">
+            <p class="tag">Avec ta clé Anthropic</p>
             <h3>Seul le texte part, jamais la voix</h3>
-            <p>Le texte transcrit est envoyé à Anthropic, avec votre propre clé, pour être mis en forme par Claude. L'audio, lui, ne quitte pas l'appareil.</p>
+            <p>Le texte transcrit est envoyé à Anthropic, avec ta propre clé, pour être mis en forme par Claude. L'audio, lui, ne quitte pas l'appareil.</p>
           </article>
-          <article class="privacy-card">
+          <article class="card">
             <p class="tag">Gratuite</p>
-            <h3>Votre clé, vos conditions</h3>
-            <p>Dites est gratuite et ne sert pas d'intermédiaire : la mise en forme est facturée par Anthropic, selon votre usage, et seulement si vous le voulez.</p>
+            <h3>Ta clé, tes conditions</h3>
+            <p>Dites est gratuite et ne sert pas d'intermédiaire : la mise en forme est facturée par Anthropic, selon ton usage, et seulement si tu le veux.</p>
           </article>
         </div>
-        <p class="soon"><span class="tag">Bientôt</span> Une formule prête à l'emploi, sans clé à configurer : installez, parlez, c'est mis en forme.</p>
+        <p class="soon"><span class="tag">Bientôt</span> Une formule prête à l'emploi, sans clé à configurer : installe, parle, c'est mis en forme.</p>
       </div>
     </section>
 
     <!-- 5. Compte facultatif -->
-    <section id="compte" class="section section-alt">
+    <section id="compte" class="section">
       <div class="container split">
-        <div>
-          <h2>Un compte ? Seulement si vous le voulez.</h2>
-          <p>Dites fonctionne entièrement sans compte. Si vous en créez un, votre dictionnaire, vos raccourcis, vos prompts et vos styles vous suivent sur tous vos appareils.</p>
+        <div class="section-head">
+          <span class="label">04 · Compte</span>
+          <h2>Un compte ? Seulement si tu veux.</h2>
+          <p class="section-lead">Dites fonctionne entièrement sans compte. Si tu en crées un, ton dictionnaire, tes raccourcis, tes prompts et tes styles te suivent sur tous tes appareils.</p>
         </div>
         <ul class="checklist">
           <li>Toutes les fonctionnalités, sans inscription</li>
           <li>Synchronisation facultative entre Mac et Android</li>
-          <li>Seuls vos réglages sont synchronisés, pas vos dictées</li>
+          <li>Seuls tes réglages sont synchronisés, pas tes dictées</li>
         </ul>
       </div>
     </section>
@@ -210,27 +229,30 @@
     <!-- 6. Installation -->
     <section id="installation" class="section">
       <div class="container">
-        <h2>Installation</h2>
-        <p class="section-lead">Dites est distribuée en dehors des boutiques d'applications. Voici exactement ce qui vous attend, sans surprise.</p>
+        <div class="section-head">
+          <span class="label">05 · Installation</span>
+          <h2>Installation</h2>
+          <p class="section-lead">Dites est distribuée hors des boutiques d'applications. Voici exactement ce qui t'attend, sans surprise.</p>
+        </div>
         <div class="install-grid">
-          <article class="install-card">
+          <article class="card install-card">
             <h3>Mac</h3>
-            <p class="install-req">macOS 14 (Sonoma) ou plus récent. Mac Apple Silicon recommandé.</p>
+            <p class="install-req">macOS 14 (Sonoma) ou plus · Apple Silicon recommandé</p>
             <ol class="install-steps">
-              <li>Téléchargez <strong>Dites.dmg</strong> et glissez Dites dans le dossier Applications.</li>
-              <li>L'app n'est pas notarisée par Apple : au premier lancement, macOS la bloque. Ouvrez <strong>Réglages Système &gt; Confidentialité et sécurité</strong>, puis cliquez sur <strong>« Ouvrir quand même »</strong>.</li>
-              <li>Autorisez l'accès au <strong>micro</strong> (pour vous entendre) et à l'<strong>Accessibilité</strong> (pour coller le texte dans les autres apps).</li>
+              <li>Télécharge <strong>Dites.dmg</strong> et glisse Dites dans le dossier Applications.</li>
+              <li>L'app n'est pas notarisée par Apple : au premier lancement, macOS la bloque. Ouvre <strong>Réglages Système &gt; Confidentialité et sécurité</strong>, puis clique sur <strong>« Ouvrir quand même »</strong>.</li>
+              <li>Autorise l'accès au <strong>micro</strong> (pour t'entendre) et à l'<strong>Accessibilité</strong> (pour coller le texte dans les autres apps).</li>
               <li>Ensuite, les mises à jour s'installent en un clic depuis l'app.</li>
             </ol>
             <a class="btn btn-primary" data-download="mac" href="#installation">Télécharger pour Mac</a>
           </article>
-          <article class="install-card">
+          <article class="card install-card">
             <h3>Android</h3>
-            <p class="install-req">Android 12 ou plus récent.</p>
+            <p class="install-req">Android 12 ou plus</p>
             <ol class="install-steps">
-              <li>Téléchargez <strong>Dites.apk</strong> depuis votre téléphone. L'app n'est pas sur le Play Store.</li>
-              <li>Android vous demande d'autoriser l'installation depuis cette source (votre navigateur ou votre gestionnaire de fichiers). Acceptez, puis installez.</li>
-              <li>Autorisez l'accès au micro au premier lancement.</li>
+              <li>Télécharge <strong>Dites.apk</strong> depuis ton téléphone. L'app n'est pas sur le Play Store.</li>
+              <li>Android te demande d'autoriser l'installation depuis cette source (ton navigateur ou ton gestionnaire de fichiers). Accepte, puis installe.</li>
+              <li>Autorise l'accès au micro au premier lancement.</li>
               <li>Les mises à jour se lancent depuis l'app. Android demande une confirmation « Installer » à chaque fois, et la première fois d'autoriser Dites comme source.</li>
             </ol>
             <a class="btn btn-secondary" data-download="android" href="#installation">Télécharger pour Android</a>
@@ -240,21 +262,28 @@
     </section>
 
     <!-- 7. FAQ -->
-    <section id="faq" class="section section-alt">
+    <section id="faq" class="section">
       <div class="container narrow">
-        <h2>Questions fréquentes</h2>
+        <div class="section-head">
+          <span class="label">06 · FAQ</span>
+          <h2>Questions fréquentes</h2>
+        </div>
         <div class="faq">
           <details>
             <summary>Combien ça coûte ?</summary>
-            <p>Dites est gratuite. La mise en forme par Claude est facultative : elle utilise votre propre clé Anthropic, facturée directement par Anthropic selon votre usage. Sans clé, vous ne payez rien. Une formule prête à l'emploi, sans clé à configurer, arrivera plus tard.</p>
+            <p>Dites est gratuite. La mise en forme par Claude est facultative : elle utilise ta propre clé Anthropic, facturée directement par Anthropic selon ton usage. Sans clé, tu ne paies rien. Une formule prête à l'emploi, sans clé à configurer, arrivera plus tard.</p>
           </details>
           <details>
             <summary>Que puis-je faire sans clé ?</summary>
             <p>L'essentiel : transcription sur l'appareil, ponctuation et majuscules de base, dictionnaire personnel et raccourcis de texte. La clé ajoute la suppression des tics, les corrections à voix haute, la mise en forme, les styles, la traduction et le résumé.</p>
           </details>
           <details>
+            <summary>Comment marche le mode mains libres ?</summary>
+            <p>Tapote ton raccourci (relâche-le en moins de 0,3 s) : l'enregistrement continue sans que tu aies à tenir la touche. Appuie de nouveau pour terminer, ou sur <span class="key">⎋</span> pour annuler.</p>
+          </details>
+          <details>
             <summary>Que deviennent mes données ?</summary>
-            <p>Votre voix est transcrite sur l'appareil et l'audio n'est jamais envoyé. Sans clé, aucune donnée ne sort. Avec votre clé Anthropic, seul le texte transcrit est envoyé à Anthropic pour la mise en forme. Le compte, facultatif, ne synchronise que vos réglages : dictionnaire, raccourcis, prompts et styles.</p>
+            <p>Ta voix est transcrite sur l'appareil et l'audio n'est jamais envoyé. Sans clé, aucune donnée ne sort. Avec ta clé Anthropic, seul le texte transcrit est envoyé à Anthropic pour la mise en forme. Le compte, facultatif, ne synchronise que tes réglages : dictionnaire, raccourcis, prompts et styles.</p>
           </details>
           <details>
             <summary>Puis-je utiliser GPT ou un autre modèle ?</summary>
@@ -266,7 +295,7 @@
           </details>
           <details>
             <summary>De quoi ai-je besoin ?</summary>
-            <p>Sur Mac : macOS 14 (Sonoma) ou plus récent ; un Mac Apple Silicon est recommandé pour une transcription rapide. Sur Android : Android 12 ou plus récent. Et un micro.</p>
+            <p>Sur Mac : macOS 14 (Sonoma) ou plus ; un Mac Apple Silicon est recommandé pour une transcription rapide. Sur Android : Android 12 ou plus. Et un micro.</p>
           </details>
           <details>
             <summary>Et sur iPhone ?</summary>
@@ -283,12 +312,9 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <a class="brand" href="/" aria-label="Dites, accueil">
-        <img src="/assets/img/logo.svg" alt="" width="24" height="24">
-        <span>Dites</span>
-      </a>
-      <p>Dictée vocale pour Mac et Android. Claude est une marque d'Anthropic ; Dites n'est pas affiliée à Anthropic.</p>
-      <p class="footer-meta">© <span data-year>2026</span> Dites · <a href="/en/" lang="en" hreflang="en">English</a></p>
+      <img class="footer-icon" src="/assets/img/logo.svg" alt="" width="44" height="44">
+      <p>Dites · dictée vocale pour Mac et Android. Claude est une marque d'Anthropic ; Dites n'est pas affiliée à Anthropic.</p>
+      <p>© <span data-year>2026</span> Dites · <a href="/en/" lang="en" hreflang="en">English</a></p>
     </div>
   </footer>
 

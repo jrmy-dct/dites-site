@@ -1,10 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Dites">
-  <!-- Logo provisoire : à remplacer par le logo définitif. -->
-  <rect width="32" height="32" rx="9" fill="#c2410c"/>
-  <g fill="#fff">
-    <rect x="7" y="13" width="3" height="6" rx="1.5"/>
-    <rect x="12" y="9" width="3" height="14" rx="1.5"/>
-    <rect x="17" y="6" width="3" height="20" rx="1.5"/>
-    <rect x="22" y="11" width="3" height="10" rx="1.5"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 14">
+  <style>.i{stroke:#1B1E1A;fill:#1B1E1A}@media (prefers-color-scheme:dark){.i{stroke:#DDE5D6;fill:#DDE5D6}}</style>
+  <rect class="i" x="0.75" y="0.75" width="22.5" height="12.5" rx="6.25" fill="none" style="fill:none" stroke-width="1.5"/>
+  <g class="i" stroke="none"><rect x="5.2" y="5.75" width="1.6" height="2.5" rx="0.8"/><rect x="8.2" y="4.5" width="1.6" height="5" rx="0.8"/><rect x="11.2" y="3.75" width="1.6" height="6.5" rx="0.8"/><rect x="14.2" y="5" width="1.6" height="4" rx="0.8"/><rect x="17.2" y="6" width="1.6" height="2" rx="0.8"/></g>
 </svg>

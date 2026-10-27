@@ -1,10 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Dites">
-  <!-- Logo provisoire : à remplacer par le logo définitif. -->
-  <rect width="32" height="32" rx="9" fill="#c2410c"/>
-  <g fill="#fff">
-    <rect x="7" y="13" width="3" height="6" rx="1.5"/>
-    <rect x="12" y="9" width="3" height="14" rx="1.5"/>
-    <rect x="17" y="6" width="3" height="20" rx="1.5"/>
-    <rect x="22" y="11" width="3" height="10" rx="1.5"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="Dites">
+  <rect x="100" y="100" width="824" height="824" rx="186" fill="#E6ECE1" stroke="#1B1E1A" stroke-opacity="0.85" stroke-width="6"/>
+  <rect x="192" y="362" width="640" height="300" rx="150" fill="none" stroke="#1B1E1A" stroke-width="16"/>
+  <circle cx="302" cy="512" r="26" fill="#C2410C"/>
+  <g fill="#1B1E1A"><rect x="368" y="470" width="32" height="84" rx="16"/><rect x="426" y="437" width="32" height="150" rx="16"/><rect x="484" y="405" width="32" height="214" rx="16"/><rect x="542" y="448" width="32" height="128" rx="16"/><rect x="600" y="421" width="32" height="182" rx="16"/><rect x="658" y="460" width="32" height="104" rx="16"/><rect x="716" y="481" width="32" height="62" rx="16"/></g>
 </svg>
