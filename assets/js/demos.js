@@ -1,8 +1,8 @@
 // Démos animées de « Comment ça marche ».
-// Chaque étape est un <li data-on="…" data-ms="…"> de la transcription : data-on liste les
-// drapeaux posés sur la scène (le CSS fait le reste), data-ms la durée de l'étape.
-// Lecture seulement quand la démo est visible ; pause au survol, au focus ou avec le bouton.
-// Avec prefers-reduced-motion : pas de lecture automatique, étapes au bouton.
+// Chaque étape est un <li data-on="…" data-ms="…"> de la liste .demo-steps (masquée à l'écran,
+// lue par les lecteurs d'écran) : data-on liste les drapeaux posés sur la scène (le CSS fait le
+// reste), data-ms la durée de l'étape. Lecture seulement quand la démo est visible, pause au
+// survol et au focus. Avec prefers-reduced-motion : état fixe, l'étape marquée data-static.
 (function () {
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -11,13 +11,18 @@
   function initDemo(root) {
     var items = Array.prototype.slice.call(root.querySelectorAll(".demo-steps li"));
     var stage = root.querySelector(".demo-stage");
-    var caption = root.querySelector(".demo-caption");
-    var toggle = root.querySelector('[data-act="toggle"]');
     var timer = root.querySelector("[data-timer]");
     if (!items.length || !stage) return;
 
+    function show(i) { stage.setAttribute("data-on", items[i].getAttribute("data-on") || ""); }
+
+    if (reduce) {
+      var fixed = items.findIndex(function (item) { return item.hasAttribute("data-static"); });
+      show(fixed > -1 ? fixed : items.length - 1);
+      return;
+    }
+
     var index = 0;
-    var userPaused = reduce;
     var hovered = false;
     var focused = false;
     var visible = false;
@@ -25,13 +30,11 @@
     var tick = null;
     var seconds = 0;
 
-    function playing() { return !userPaused && !hovered && !focused && visible; }
-
-    function flags() { return " " + (items[index].getAttribute("data-on") || "") + " "; }
+    function playing() { return !hovered && !focused && visible; }
 
     function updateTimer() {
       if (!timer) return;
-      var recording = flags().indexOf(" rec ") > -1;
+      var recording = (" " + items[index].getAttribute("data-on") + " ").indexOf(" rec ") > -1;
       if (recording && playing()) {
         if (!tick) tick = setInterval(function () { seconds++; timer.textContent = "0:" + pad(seconds); }, 1000);
       } else {
@@ -41,49 +44,17 @@
       }
     }
 
-    function render() {
-      stage.setAttribute("data-on", items[index].getAttribute("data-on") || "");
-      if (caption) caption.textContent = pad(index + 1) + "/" + pad(items.length) + " · " + items[index].textContent.trim();
-      if (toggle) {
-        toggle.textContent = toggle.getAttribute(userPaused ? "data-label-play" : "data-label-pause");
-        toggle.setAttribute("aria-pressed", String(userPaused));
-      }
-      updateTimer();
-    }
-
     function schedule() {
       clearTimeout(timeout);
       updateTimer();
       if (playing()) {
-        timeout = setTimeout(function () { go(index + 1); }, parseInt(items[index].getAttribute("data-ms"), 10) || 1200);
+        timeout = setTimeout(function () {
+          index = (index + 1) % items.length;
+          show(index);
+          schedule();
+        }, parseInt(items[index].getAttribute("data-ms"), 10) || 1200);
       }
     }
-
-    function go(n) {
-      index = (n + items.length) % items.length;
-      render();
-      schedule();
-    }
-
-    function manual(n) {
-      userPaused = true;
-      if (caption) caption.setAttribute("aria-live", "polite");
-      go(n);
-    }
-
-    root.addEventListener("click", function (event) {
-      var button = event.target.closest("[data-act]");
-      if (!button) return;
-      var act = button.getAttribute("data-act");
-      if (act === "prev") manual(index - 1);
-      else if (act === "next") manual(index + 1);
-      else if (act === "toggle") {
-        userPaused = !userPaused;
-        if (caption) caption.setAttribute("aria-live", userPaused ? "polite" : "off");
-        render();
-        schedule();
-      }
-    });
 
     stage.addEventListener("pointerenter", function () { hovered = true; schedule(); });
     stage.addEventListener("pointerleave", function () { hovered = false; schedule(); });
@@ -101,7 +72,7 @@
       visible = true;
     }
 
-    render();
+    show(index);
     schedule();
   }
 

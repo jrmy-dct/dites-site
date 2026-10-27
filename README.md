@@ -43,7 +43,7 @@ Calquée sur `Theme.swift` de l'app : papier vert sauge, encre presque noire, fi
 
 ## Démos animées
 
-La section « Comment ça marche » contient deux démos (Mac et Android) dessinées en HTML/CSS. Les étapes sont les `<li data-on="…" data-ms="…">` de la transcription sous chaque démo : `data-on` liste les drapeaux posés sur la scène (le CSS affiche les éléments correspondants), `data-ms` la durée. Pour modifier un texte ou une étape, éditez ces `<li>` et les éléments de la scène, dans les deux langues. La lecture s'arrête hors écran, au survol, au focus ou avec le bouton Pause ; avec `prefers-reduced-motion`, elle ne démarre pas et les étapes se parcourent aux boutons.
+La section « Comment ça marche » contient deux démos (sur ordinateur et sur téléphone) dessinées en HTML/CSS. Les étapes sont les `<li data-on="…" data-ms="…">` de la liste `.demo-steps` (masquée à l'écran, lue par les lecteurs d'écran) : `data-on` liste les drapeaux posés sur la scène (le CSS affiche les éléments correspondants), `data-ms` la durée. Pour modifier un texte ou une étape, éditez ces `<li>` et les éléments de la scène, dans les deux langues. La lecture s'arrête hors écran, au survol et au focus ; avec `prefers-reduced-motion`, la démo affiche l'étape marquée `data-static` (état final fixe).
 
 ## Langues
 

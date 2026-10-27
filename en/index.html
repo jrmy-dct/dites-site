@@ -113,6 +113,7 @@
         </div>
         <div class="demos">
           <figure class="demo" data-demo role="group" aria-label="Animated demo on Mac: a click in a document, the right Option key held down, the recording pill while you talk, then the options bubble offering the clean text in English, French or as a summary, and the text pasted into the document.">
+            <h3 class="demo-title">On your computer</h3>
             <div class="demo-stage mac-stage" aria-hidden="true">
               <div class="mac">
                 <div class="mac-screen">
@@ -144,33 +145,24 @@
                 <div class="mac-key"><span class="raw-label">Key</span><span class="mac-keycap">right ⌥</span></div>
               </div>
             </div>
-          <div class="demo-controls">
-            <button class="demo-btn" type="button" data-act="prev" aria-label="Previous step">←</button>
-            <button class="demo-btn demo-toggle" type="button" data-act="toggle" data-label-pause="Pause" data-label-play="Play" aria-pressed="false">Pause</button>
-            <button class="demo-btn" type="button" data-act="next" aria-label="Next step">→</button>
-            <p class="demo-caption"></p>
-          </div>
-            <figcaption><span class="label">On Mac</span> Hold <span class="key">right ⌥</span>, talk, let go.</figcaption>
-            <details class="demo-transcript">
-              <summary>Show the sequence as text</summary>
-              <ol class="demo-steps">
+            <ol class="demo-steps sr-only">
               <li data-on="mouse" data-ms="1100">The mouse pointer moves into the document.</li>
               <li data-on="mouse m-doc click caret" data-ms="1000">Click: the text cursor blinks.</li>
               <li data-on="mouse m-doc caret key" data-ms="1000">You hold right ⌥.</li>
               <li data-on="caret key pill rec" data-ms="1400">The recording pill appears: you talk.</li>
               <li data-on="caret key pill rec raw" data-ms="2400">What you say, word for word: “uh so let's meet Tuesday at 2… no actually 4 for the budget review, yeah”.</li>
               <li data-on="caret keyup pill proc raw" data-ms="1300">You let go of the key: polishing…</li>
-              <li data-on="caret options sel-1" data-ms="1800">The options bubble offers the clean text: “Let's meet Tuesday at 4 pm for the budget review.”</li>
+              <li data-on="caret options sel-1" data-ms="1800" data-static>The options bubble offers the clean text: “Let's meet Tuesday at 4 pm for the budget review.”</li>
               <li data-on="caret options sel-2 tab" data-ms="1600">⇥: the French version, “On se voit mardi à 16 h pour le point budget.”</li>
               <li data-on="caret options sel-3 tab" data-ms="1500">⇥: the summary, “Budget review: Tuesday, 4 pm.”</li>
               <li data-on="caret options sel-1 tab" data-ms="1200">⇥: back to English.</li>
               <li data-on="caret options sel-1 enter" data-ms="700">↵: paste.</li>
               <li data-on="caret inserted" data-ms="2600">The text is written into the document, right at the cursor.</li>
-              </ol>
-            </details>
+            </ol>
           </figure>
 
           <figure class="demo" data-demo role="group" aria-label="Animated demo on Android: a finger taps the message field of a chat, the Dites bubble appears above the keyboard, you hold it to talk, then the review panel offers the clean text, which is inserted and sent.">
+            <h3 class="demo-title">On your phone</h3>
             <div class="demo-stage phone-stage" aria-hidden="true">
               <div class="phone">
                 <div class="phone-screen">
@@ -191,16 +183,7 @@
                 </div>
               </div>
             </div>
-          <div class="demo-controls">
-            <button class="demo-btn" type="button" data-act="prev" aria-label="Previous step">←</button>
-            <button class="demo-btn demo-toggle" type="button" data-act="toggle" data-label-pause="Pause" data-label-play="Play" aria-pressed="false">Pause</button>
-            <button class="demo-btn" type="button" data-act="next" aria-label="Next step">→</button>
-            <p class="demo-caption"></p>
-          </div>
-            <figcaption><span class="label">On Android</span> Hold the bubble, talk, let go.</figcaption>
-            <details class="demo-transcript">
-              <summary>Show the sequence as text</summary>
-              <ol class="demo-steps">
+            <ol class="demo-steps sr-only">
               <li data-on="finger" data-ms="1000">A chat is open.</li>
               <li data-on="finger f-field press kbd caret" data-ms="1000">A finger taps the message field: the keyboard opens.</li>
               <li data-on="kbd caret bubble" data-ms="1100">The Dites bubble floats above the keyboard.</li>
@@ -211,12 +194,10 @@
               <li data-on="kbd caret panel sel-1" data-ms="1100">You pick an option.</li>
               <li data-on="kbd caret panel sel-1 finger f-insert press" data-ms="900">You tap “Insert”.</li>
               <li data-on="kbd field-text" data-ms="1200">The text lands in the field.</li>
-              <li data-on="kbd sent" data-ms="2600">The message is sent to the chat.</li>
-              </ol>
-            </details>
+              <li data-on="kbd sent" data-ms="2600" data-static>The message is sent to the chat.</li>
+            </ol>
           </figure>
         </div>
-        <p class="handsfree">Hands-free: tap <span class="key">right ⌥</span> or the bubble (under 0.3 s), then press again to finish. <span class="key">⎋</span> cancels.</p>
       </div>
     </section>
 

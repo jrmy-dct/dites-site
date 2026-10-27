@@ -113,6 +113,7 @@
         </div>
         <div class="demos">
           <figure class="demo" data-demo role="group" aria-label="Démo animée sur Mac : un clic dans un document, la touche Option droite maintenue, la pilule d'enregistrement pendant que tu parles, puis la bulle d'options qui propose le texte propre en français, en anglais ou en synthèse, et le texte collé dans le document.">
+            <h3 class="demo-title">Sur ordinateur</h3>
             <div class="demo-stage mac-stage" aria-hidden="true">
               <div class="mac">
                 <div class="mac-screen">
@@ -144,33 +145,24 @@
                 <div class="mac-key"><span class="raw-label">Touche</span><span class="mac-keycap">⌥ droite</span></div>
               </div>
             </div>
-          <div class="demo-controls">
-            <button class="demo-btn" type="button" data-act="prev" aria-label="Étape précédente">←</button>
-            <button class="demo-btn demo-toggle" type="button" data-act="toggle" data-label-pause="Pause" data-label-play="Lecture" aria-pressed="false">Pause</button>
-            <button class="demo-btn" type="button" data-act="next" aria-label="Étape suivante">→</button>
-            <p class="demo-caption"></p>
-          </div>
-            <figcaption><span class="label">Sur Mac</span> Maintiens <span class="key">⌥ droite</span>, parle, relâche.</figcaption>
-            <details class="demo-transcript">
-              <summary>Voir la séquence en texte</summary>
-              <ol class="demo-steps">
+            <ol class="demo-steps sr-only">
               <li data-on="mouse" data-ms="1100">Le curseur de la souris va dans le document.</li>
               <li data-on="mouse m-doc click caret" data-ms="1000">Clic : le curseur texte clignote.</li>
               <li data-on="mouse m-doc caret key" data-ms="1000">Tu maintiens ⌥ droite.</li>
               <li data-on="caret key pill rec" data-ms="1400">La pilule d'enregistrement apparaît : tu parles.</li>
               <li data-on="caret key pill rec raw" data-ms="2400">Ce que tu dis, tel quel : « euh donc on se voit mardi à 14h… non plutôt 16h pour le point budget hein ».</li>
               <li data-on="caret keyup pill proc raw" data-ms="1300">Tu relâches la touche : mise en forme…</li>
-              <li data-on="caret options sel-1" data-ms="1800">La bulle d'options propose le texte propre : « On se voit mardi à 16 h pour le point budget. »</li>
+              <li data-on="caret options sel-1" data-ms="1800" data-static>La bulle d'options propose le texte propre : « On se voit mardi à 16 h pour le point budget. »</li>
               <li data-on="caret options sel-2 tab" data-ms="1600">⇥ : la version anglaise, « Let's meet Tuesday at 4 pm for the budget review. »</li>
               <li data-on="caret options sel-3 tab" data-ms="1500">⇥ : la synthèse, « Point budget : mardi, 16 h. »</li>
               <li data-on="caret options sel-1 tab" data-ms="1200">⇥ : retour au français.</li>
               <li data-on="caret options sel-1 enter" data-ms="700">↵ : coller.</li>
               <li data-on="caret inserted" data-ms="2600">Le texte s'écrit dans le document, à l'emplacement du curseur.</li>
-              </ol>
-            </details>
+            </ol>
           </figure>
 
           <figure class="demo" data-demo role="group" aria-label="Démo animée sur Android : un doigt touche le champ d'une conversation, la bulle Dites apparaît au-dessus du clavier, on la maintient pour parler, puis le panneau de relecture propose le texte propre, qui est inséré puis envoyé.">
+            <h3 class="demo-title">Sur téléphone</h3>
             <div class="demo-stage phone-stage" aria-hidden="true">
               <div class="phone">
                 <div class="phone-screen">
@@ -191,16 +183,7 @@
                 </div>
               </div>
             </div>
-          <div class="demo-controls">
-            <button class="demo-btn" type="button" data-act="prev" aria-label="Étape précédente">←</button>
-            <button class="demo-btn demo-toggle" type="button" data-act="toggle" data-label-pause="Pause" data-label-play="Lecture" aria-pressed="false">Pause</button>
-            <button class="demo-btn" type="button" data-act="next" aria-label="Étape suivante">→</button>
-            <p class="demo-caption"></p>
-          </div>
-            <figcaption><span class="label">Sur Android</span> Maintiens la bulle, parle, relâche.</figcaption>
-            <details class="demo-transcript">
-              <summary>Voir la séquence en texte</summary>
-              <ol class="demo-steps">
+            <ol class="demo-steps sr-only">
               <li data-on="finger" data-ms="1000">Une conversation est ouverte.</li>
               <li data-on="finger f-field press kbd caret" data-ms="1000">Le doigt touche le champ de saisie : le clavier s'ouvre.</li>
               <li data-on="kbd caret bubble" data-ms="1100">La bulle Dites flotte au-dessus du clavier.</li>
@@ -211,12 +194,10 @@
               <li data-on="kbd caret panel sel-1" data-ms="1100">Tu choisis une option.</li>
               <li data-on="kbd caret panel sel-1 finger f-insert press" data-ms="900">Tu touches « Insérer ».</li>
               <li data-on="kbd field-text" data-ms="1200">Le texte arrive dans le champ.</li>
-              <li data-on="kbd sent" data-ms="2600">Le message part dans la conversation.</li>
-              </ol>
-            </details>
+              <li data-on="kbd sent" data-ms="2600" data-static>Le message part dans la conversation.</li>
+            </ol>
           </figure>
         </div>
-        <p class="handsfree">Mains libres : tapote <span class="key">⌥ droite</span> ou la bulle (moins de 0,3 s), puis appuie de nouveau pour terminer. <span class="key">⎋</span> annule.</p>
       </div>
     </section>
 
