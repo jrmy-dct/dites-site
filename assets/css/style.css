@@ -301,14 +301,14 @@ p { margin: 0 0 1em; }
     .benefits li:last-child { padding-bottom: 0; }
   }
 }
-.tier-note { margin: 24px 0 72px; color: var(--muted); font-size: 0.92rem; }
+.tier-note { margin: 24px 0 0; color: var(--muted); font-size: 0.92rem; }
 
-.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
-.shot { margin: 0; }
-.shot img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: var(--radius); }
-.shot figcaption { margin-top: 12px; color: var(--muted); font-family: var(--mono); font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; }
 
 .privacy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+/* Icônes filaires des cartes vie privée : même trait que les bénéfices, sans remplissage. */
+.privacy-icon { display: block; width: 48px; height: 48px; margin-bottom: 20px; fill: none; stroke: var(--ink); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.privacy-icon .mask { fill: var(--paper); }
+.soon-icon { display: inline-block; width: 11px; height: 11px; margin: 0 6px -1px 0; fill: none; stroke: currentColor; stroke-width: 1.3; stroke-linejoin: round; }
 .soon { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 12px; margin: 32px 0 0; color: var(--muted); }
 .soon .tag { margin: 0; }
 
@@ -623,14 +623,11 @@ p { margin: 0 0 1em; }
 @media (max-width: 960px) {
   .hero-grid, .split { grid-template-columns: 1fr; gap: 48px; }
   .hero-visual { justify-items: start; }
-  .gallery { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 760px) {
   .nav-links { display: none; }
   .privacy-grid, .install-grid, .tiers { grid-template-columns: 1fr; }
-  .gallery { grid-template-columns: 1fr 1fr; gap: 14px; }
-  .gallery .shot:last-child { grid-column: 1 / -1; width: 50%; justify-self: center; }
   .card { padding: 22px; }
   .cta-row .btn { width: 100%; }
   .install-card .btn { align-self: stretch; }

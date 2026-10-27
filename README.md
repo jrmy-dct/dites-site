@@ -16,7 +16,6 @@ assets/
   js/demos.js           Séquenceur des démos animées de « Comment ça marche »
   img/logo.svg          Icône de l'app
   img/favicon.svg       Icône de barre des menus (favicon)
-  img/screenshots/      Emplacements de captures (SVG à remplacer)
 updates/
   mac/appcast.xml       Flux Sparkle (exemple)
   android/latest.json   Flux de mise à jour Android (exemple)
@@ -32,10 +31,6 @@ Ils sont centralisés dans `assets/js/config.js`. Tout lien portant `data-downlo
 - `/updates/android/latest.json` : `version`, `versionCode` (entier croissant), `url` de l'APK, `sha256` du fichier, `notes`.
 
 Les valeurs actuelles sont fictives.
-
-## Captures d'écran
-
-Remplacez les fichiers de `assets/img/screenshots/` en gardant les mêmes noms, ou changez les `src` dans `index.html` et `en/index.html` pour du PNG ou du WebP. Réglages Mac : 760 × 1100 pt, à fournir en @2x (1520 × 2200 px), une version claire (`reglages-clair`) et une sombre (`reglages-sombre`). Android : 600 × 1200 en attendant le ratio exact. La pilule d'enregistrement et la bulle d'options sont en HTML/CSS : pas de capture nécessaire.
 
 ## Identité visuelle
 
