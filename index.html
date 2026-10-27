@@ -300,10 +300,10 @@
             <h3>Mac</h3>
             <p class="install-req">macOS 14 (Sonoma) ou plus · Apple Silicon recommandé</p>
             <ol class="install-steps">
-              <li>Télécharge <strong>Dites.dmg</strong> et glisse Dites dans le dossier Applications.</li>
-              <li>L'app n'est pas notarisée par Apple : au premier lancement, macOS la bloque. Ouvre <strong>Réglages Système &gt; Confidentialité et sécurité</strong>, puis clique sur <strong>« Ouvrir quand même »</strong>.</li>
+              <li>Ouvre <strong>Dites.dmg</strong> et <strong>glisse Dites dans le dossier Applications</strong>. Ne la lance pas depuis le DMG ni depuis Téléchargements : macOS l'exécuterait depuis une copie temporaire, qui ne peut pas se mettre à jour.</li>
+              <li>L'app n'est pas notarisée par Apple : au premier lancement, macOS la bloque. Sur macOS 15 et plus, ouvre <strong>Réglages Système &gt; Confidentialité et sécurité</strong>, puis clique sur <strong>« Ouvrir quand même »</strong>. Sur macOS 14, fais <strong>clic droit sur Dites &gt; Ouvrir</strong>.</li>
               <li>Autorise l'accès au <strong>micro</strong> (pour t'entendre) et à l'<strong>Accessibilité</strong> (pour coller le texte dans les autres apps).</li>
-              <li>Ensuite, les mises à jour s'installent en un clic depuis l'app.</li>
+              <li>Ensuite, les mises à jour se font depuis l'app, en un clic, sans redemander ces autorisations.</li>
             </ol>
             <a class="btn btn-primary" data-download="mac" href="#installation">Télécharger pour Mac</a>
           </article>
@@ -365,8 +365,8 @@
             <p>La version iOS est en préparation.</p>
           </details>
           <details>
-            <summary>Pourquoi macOS affiche-t-il un avertissement ?</summary>
-            <p>Dites n'est pas encore notarisée par Apple. macOS bloque donc le premier lancement par précaution. La marche à suivre est détaillée dans la section <a href="#installation">Installation</a>.</p>
+            <summary>Pourquoi macOS bloque-t-il Dites au premier lancement ?</summary>
+            <p>Dites n'est pas notarisée par Apple : il faudrait un compte développeur Apple payant. L'app est signée et vérifiable, et tu ne l'autorises qu'une fois. La marche à suivre est dans la section <a href="#installation">Installation</a>.</p>
           </details>
         </div>
       </div>
