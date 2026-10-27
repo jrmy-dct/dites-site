@@ -24,7 +24,7 @@
   <script>
     try { var t = localStorage.getItem("dites-theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {}
   </script>
-  <link rel="stylesheet" href="/assets/css/style.css?v=dc2c5e10">
+  <link rel="stylesheet" href="/assets/css/style.css?v=eff3b0cb">
 </head>
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -119,7 +119,7 @@
                 <div class="mac-screen">
                   <div class="mac-display">
                     <div class="win">
-                      <div class="win-bar"><span></span><span></span><span></span><em>Compte rendu.txt</em></div>
+                      <div class="win-bar"><span></span><span></span><span></span><em>Compte rendu.txt</em><b class="win-key">⌥ droite</b></div>
                       <div class="doc">
                         <i class="doc-l" style="width:92%"></i><i class="doc-l" style="width:78%"></i><i class="doc-l" style="width:86%"></i><i class="doc-l" style="width:44%"></i>
                         <p class="doc-live"><span class="doc-insert">On se voit mardi à 16 h pour le point budget.</span><span class="caret"></span></p>
@@ -142,7 +142,6 @@
                   </div>
                 </div>
                 <div class="mac-base"></div>
-                <div class="mac-key"><span class="raw-label">Touche</span><span class="mac-keycap">⌥ droite</span></div>
               </div>
             </div>
             <ol class="demo-steps sr-only">
@@ -207,28 +206,29 @@
         <div class="section-head">
           <span class="label">02 · Fonctionnalités</span>
           <h2>Deux niveaux, à toi de choisir</h2>
-          <p class="section-lead">Sans rien configurer, Dites fait déjà de la vraie dictée. Ajoute ta clé Anthropic, et Claude transforme ce que tu dis en texte prêt à envoyer.</p>
+          <p class="section-lead">Sans rien configurer, Dites dicte déjà partout, en privé. Ajoute ta clé Claude, et ce que tu dis devient un texte prêt à envoyer.</p>
         </div>
         <div class="tiers">
           <article class="card tier">
-            <p class="tag">Sans clé · tout reste sur l'appareil</p>
-            <h3>La dictée, simplement</h3>
-            <ul class="tier-list">
-              <li><strong>Transcription sur l'appareil</strong>, avec Whisper</li>
-              <li><strong>Ponctuation et majuscules</strong> de base</li>
-              <li><strong>Dictionnaire personnel</strong> : noms propres, jargon et noms d'entreprises mieux reconnus. Sur Mac, sélectionne un mot et fais <span class="key">⌃⌥D</span> : il entre dans ton dictionnaire.</li>
-              <li><strong>Raccourcis de texte</strong> : dis « signature » et le bloc complet s'insère</li>
+            <p class="tag">Gratuit · sans clé</p>
+            <h3 class="tier-title">Dicte partout, en privé</h3>
+            <p class="tier-lead">Tout se passe sur ton appareil : rien de ce que tu dictes ne part sur Internet.</p>
+            <ul class="benefits">
+              <li><svg class="benefit-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg><div><h4>Ta voix reste chez toi</h4><p>La reconnaissance vocale tourne sur ton Mac ou ton téléphone.</p></div></li>
+              <li><svg class="benefit-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="2"/><rect x="13.5" y="3.5" width="7" height="7" rx="2"/><rect x="3.5" y="13.5" width="7" height="7" rx="2"/><rect x="13.5" y="13.5" width="7" height="7" rx="2"/></svg><div><h4>Dans toutes tes apps</h4><p>Mail, messagerie, document : n'importe quel champ de texte.</p></div></li>
+              <li><svg class="benefit-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 5.5a2 2 0 0 1 2-2h12v15h-12a2 2 0 0 0-2 2z"/><path d="M4.5 20.5a2 2 0 0 1 2-2h12v2"/><path d="M9 8h6"/></svg><div><h4>Tes mots à toi</h4><p>Noms propres, jargon et entreprises appris dans ton dictionnaire. Sur Mac : sélectionne un mot, <span class="key">⌃⌥D</span>.</p></div></li>
+              <li><svg class="benefit-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3 5.5 13.5h6L10.5 21 18.5 10h-6z"/></svg><div><h4>Des raccourcis qui écrivent pour toi</h4><p>Dis « signature », le bloc complet s'insère.</p></div></li>
             </ul>
           </article>
           <article class="card tier">
-            <p class="tag tag-filled">Avec ta clé Anthropic · niveau 1, plus</p>
-            <h3>Un texte prêt à envoyer</h3>
-            <ul class="tier-list">
-              <li><strong>Fini les « euh »</strong> : tes tics de langage sont retirés</li>
-              <li><strong>Corrections à voix haute</strong> : « jeudi à 14 h… non, plutôt 16 h » donne « jeudi à 16 h »</li>
-              <li><strong>Mise en forme</strong> : paragraphes et listes</li>
-              <li><strong>Styles selon l'app</strong> : mail, message, note… et les tiens</li>
-              <li><strong>Prompts de transformation</strong> : traduire, résumer, rendre plus direct</li>
+            <p class="tag tag-filled">Avec ta clé Claude</p>
+            <h3 class="tier-title">Un texte prêt à envoyer</h3>
+            <p class="tier-lead">Branche ta clé Claude : Dites nettoie et met en forme pour toi.</p>
+            <ul class="benefits">
+              <li><svg class="benefit-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16"/><path d="m6.5 16.5 9-9 3 3-9 9h-3l-2-2z"/><path d="m12.5 10.5 3 3"/></svg><div><h4>Fini les « euh »</h4><p>Les tics et les hésitations disparaissent.</p></div></li>
+              <li><svg class="benefit-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7.5 4.5 12 9 16.5"/><path d="M4.5 12h10a5 5 0 0 1 0 10h-3"/></svg><div><h4>Tu te corriges à voix haute</h4><p>« 14 h… non, 16 h » donne « 16 h ».</p></div></li>
+              <li><svg class="benefit-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6.5h14M5 12h14M5 17.5h14"/><circle cx="9" cy="6.5" r="1.8"/><circle cx="15" cy="12" r="1.8"/><circle cx="7.5" cy="17.5" r="1.8"/></svg><div><h4>Le bon ton selon l'app</h4><p>Plus formel dans un mail, plus direct dans une messagerie, et tes propres styles.</p></div></li>
+              <li><svg class="benefit-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17"/><path d="M12 3.5c2.4 2.4 3.5 5.2 3.5 8.5s-1.1 6.1-3.5 8.5c-2.4-2.4-3.5-5.2-3.5-8.5s1.1-6.1 3.5-8.5z"/></svg><div><h4>Traduis ou résume en un geste</h4><p>Français, English, synthèse : juste avant de coller.</p></div></li>
             </ul>
           </article>
         </div>
@@ -362,7 +362,7 @@
           </details>
           <details>
             <summary>Quelles langues sont reconnues ?</summary>
-            <p>Dites est pensée d'abord pour le français. La transcription repose sur Whisper, qui reconnaît aussi l'anglais et de nombreuses autres langues.</p>
+            <p>Dites est pensée d'abord pour le français. La reconnaissance vocale comprend aussi l'anglais et de nombreuses autres langues.</p>
           </details>
           <details>
             <summary>De quoi ai-je besoin ?</summary>
@@ -389,8 +389,8 @@
     </div>
   </footer>
 
-  <script src="/assets/js/config.js?v=dc2c5e10"></script>
-  <script src="/assets/js/main.js?v=dc2c5e10"></script>
-  <script src="/assets/js/demos.js?v=dc2c5e10"></script>
+  <script src="/assets/js/config.js?v=eff3b0cb"></script>
+  <script src="/assets/js/main.js?v=eff3b0cb"></script>
+  <script src="/assets/js/demos.js?v=eff3b0cb"></script>
 </body>
 </html>

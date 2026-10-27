@@ -281,10 +281,26 @@ p { margin: 0 0 1em; }
 .tag-filled { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 
 .tiers { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.tier-list { margin: 0; padding: 0; list-style: none; }
-.tier-list li { padding: 12px 0; border-top: 1px solid var(--faint); }
-.tier-list li:first-child { border-top: 0; padding-top: 0; }
-.tier-list strong { font-weight: 600; }
+.tier { display: flex; flex-direction: column; }
+.tier .tag { align-self: flex-start; justify-self: start; }
+.tier-title { margin: 0 0 0.4em; font-size: clamp(1.6rem, 2.6vw, 2.1rem); letter-spacing: -0.02em; }
+.tier-lead { margin: 0 0 24px; color: var(--muted); font-size: 1.02rem; }
+.benefits { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--faint); }
+.benefits li { display: grid; grid-template-columns: 22px 1fr; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--faint); }
+.benefits li:last-child { border-bottom: 0; padding-bottom: 0; }
+.benefit-icon { width: 22px; height: 22px; margin-top: 2px; fill: none; stroke: var(--ink); stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; }
+.benefits h4 { margin: 0 0 2px; font-family: var(--font); font-size: 1.05rem; font-weight: 700; line-height: 1.35; }
+.benefits p { margin: 0; color: var(--muted); font-size: 0.95rem; line-height: 1.5; }
+/* Côte à côte : les deux cartes partagent leurs lignes (sous-grille), titres et bénéfices alignés. */
+@supports (grid-template-rows: subgrid) {
+  @media (min-width: 761px) {
+    .tiers { grid-auto-flow: column; grid-template-rows: repeat(7, auto); }
+    .tier { display: grid; grid-row: span 7; grid-template-rows: subgrid; row-gap: 0; }
+    .benefits { display: contents; }
+    .benefits li { border-top: 1px solid var(--faint); border-bottom: 0; }
+    .benefits li:last-child { padding-bottom: 0; }
+  }
+}
 .tier-note { margin: 24px 0 72px; color: var(--muted); font-size: 0.92rem; }
 
 .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
@@ -341,7 +357,8 @@ p { margin: 0 0 1em; }
 /* Démos animées « Comment ça marche ».
    La scène reçoit data-on="drapeaux…" (posé par demos.js) ; chaque élément apparaît selon ses drapeaux.
    Tailles en em, l'em suit la largeur de la scène (container query). Animations en transform et opacity. */
-.demos { display: grid; grid-template-columns: minmax(0, 2.3fr) minmax(0, 1fr); gap: 40px; align-items: start; }
+/* Hauteur égale portable / téléphone : largeurs au ratio inverse des proportions (2 / 0,66 ≈ 3,03). */
+.demos { display: grid; grid-template-columns: minmax(0, 3.03fr) minmax(0, 1fr); gap: 40px; align-items: start; }
 .demo { margin: 0; display: grid; gap: 14px; min-width: 0; }
 .demo-stage { position: relative; container-type: inline-size; user-select: none; }
 .demo-stage *, .demo-stage *::before, .demo-stage *::after { transition-timing-function: ease; }
@@ -359,17 +376,15 @@ p { margin: 0 0 1em; }
 
 /* ---------- Mac ---------- */
 /* L'em suit la largeur de la scène : la taille de police est posée sur l'enfant, la scène étant le conteneur. */
-.mac-stage { aspect-ratio: 100 / 80; }
-.mac { position: absolute; inset: 5% 5% 3%; font-size: 2cqw; }
-.mac-screen { position: absolute; left: 3%; right: 3%; top: 0; height: 80%; padding: 0.9em; border: 1px solid var(--line); border-radius: 1.3em; background: var(--surface); }
+.mac-stage { aspect-ratio: 100 / 66; }
+.mac { position: absolute; inset: 0; font-size: 1.8cqw; }
+.mac-screen { position: absolute; left: 4%; right: 4%; top: 0; height: 94%; padding: 0.9em; border: 1px solid var(--line); border-radius: 1.3em; background: var(--surface); }
 .mac-display { position: relative; height: 100%; border: 1px solid var(--faint); border-radius: 0.4em; background: var(--paper); overflow: hidden; container-type: size; }
-.mac-base { position: absolute; left: 0; right: 0; top: 80%; height: 4%; border: 1px solid var(--line); border-radius: 0 0 1.4em 1.4em; background: var(--surface); }
+.mac-base { position: absolute; left: 0; right: 0; top: 94%; height: 6%; border: 1px solid var(--line); border-radius: 0 0 1.4em 1.4em; background: var(--surface); }
 .mac-base::after { content: ""; position: absolute; left: 50%; top: -1px; width: 16%; height: 45%; transform: translateX(-50%); border: 1px solid var(--line); border-top: 0; border-radius: 0 0 0.6em 0.6em; }
-.mac-key { position: absolute; left: 50%; top: 89%; display: flex; align-items: center; gap: 0.7em; transform: translateX(-50%); opacity: 0; transition: opacity 0.3s; }
-.mac-key .raw-label { margin: 0; }
-.mac-keycap { padding: 0.25em 0.8em; border: 1px solid var(--line); border-radius: 0.45em; font-family: var(--mono); font-size: 1em; font-weight: 500; transition: background-color 0.15s, color 0.15s, transform 0.15s; }
-.mac-stage[data-on~="key"] .mac-key, .mac-stage[data-on~="keyup"] .mac-key { opacity: 1; }
-.mac-stage[data-on~="key"] .mac-keycap { background: var(--ink); color: var(--paper); border-color: var(--ink); transform: translateY(0.12em); }
+/* KeyCap dans la barre de titre de l'éditeur : enfoncée pendant l'enregistrement. */
+.win-key { position: absolute; right: 0.8em; top: 50%; padding: 0.1em 0.55em; border: 1px solid var(--ink); border-radius: 0.4em; background: var(--ink); color: var(--paper); font-family: var(--mono); font-size: 0.7em; font-weight: 500; opacity: 0; transform: translateY(-50%) scale(0.9); transition: opacity 0.2s, transform 0.2s; }
+.mac-stage[data-on~="key"] .win-key { opacity: 1; transform: translateY(-50%) scale(1); }
 
 .win { position: absolute; inset: 6% 7%; border: 1px solid var(--line); border-radius: 0.6em; background: var(--surface); overflow: hidden; }
 .win-bar { position: relative; display: flex; align-items: center; gap: 0.45em; height: 2.2em; padding: 0 0.9em; border-bottom: 1px solid var(--faint); }
@@ -465,8 +480,8 @@ p { margin: 0 0 1em; }
 .mac-stage[data-on~="click"] .click-ring { animation: demo-ring 0.6s ease-out 0.1s both; }
 
 /* ---------- Android ---------- */
-.phone-stage { aspect-ratio: 100 / 190; }
-.phone { position: absolute; inset: 3.5% 6%; font-size: 4.4cqw; padding: 0.7em; border: 1px solid var(--line); border-radius: 3em; background: var(--surface); }
+.phone-stage { aspect-ratio: 100 / 200; }
+.phone { position: absolute; inset: 0; font-size: 5cqw; padding: 0.7em; border: 1px solid var(--line); border-radius: 3em; background: var(--surface); }
 .phone-screen { position: relative; height: 100%; border: 1px solid var(--faint); border-radius: 2.4em; background: var(--paper); overflow: hidden; container-type: size; }
 .chat-head { position: absolute; z-index: 2; left: 0; right: 0; top: 0; display: flex; align-items: center; gap: 0.6em; height: 3.6em; padding: 0.8em 1em 0; border-bottom: 1px solid var(--faint); background: var(--paper); }
 .chat-head .avatar { width: 1.7em; height: 1.7em; border: 1px solid var(--line); border-radius: 50%; flex: none; }
@@ -580,7 +595,7 @@ p { margin: 0 0 1em; }
 @keyframes demo-droid-level { 0% { transform: scaleY(0.3); } 15% { transform: scaleY(0.8); } 30% { transform: scaleY(0.45); } 45% { transform: scaleY(1); } 60% { transform: scaleY(0.55); } 75% { transform: scaleY(0.85); } 90% { transform: scaleY(0.35); } 100% { transform: scaleY(0.3); } }
 
 @container (max-width: 520px) {
-  .mac-stage .mac { font-size: 2.4cqw; }
+  .mac-stage .mac { font-size: 2.2cqw; }
 }
 
 @media (max-width: 960px) {

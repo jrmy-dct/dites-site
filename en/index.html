@@ -24,7 +24,7 @@
   <script>
     try { var t = localStorage.getItem("dites-theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {}
   </script>
-  <link rel="stylesheet" href="/assets/css/style.css?v=dc2c5e10">
+  <link rel="stylesheet" href="/assets/css/style.css?v=eff3b0cb">
 </head>
 <body>
   <a class="skip-link" href="#content">Skip to content</a>
@@ -119,7 +119,7 @@
                 <div class="mac-screen">
                   <div class="mac-display">
                     <div class="win">
-                      <div class="win-bar"><span></span><span></span><span></span><em>Meeting notes.txt</em></div>
+                      <div class="win-bar"><span></span><span></span><span></span><em>Meeting notes.txt</em><b class="win-key">right ⌥</b></div>
                       <div class="doc">
                         <i class="doc-l" style="width:92%"></i><i class="doc-l" style="width:78%"></i><i class="doc-l" style="width:86%"></i><i class="doc-l" style="width:44%"></i>
                         <p class="doc-live"><span class="doc-insert">Let's meet Tuesday at 4 pm for the budget review.</span><span class="caret"></span></p>
@@ -142,7 +142,6 @@
                   </div>
                 </div>
                 <div class="mac-base"></div>
-                <div class="mac-key"><span class="raw-label">Key</span><span class="mac-keycap">right ⌥</span></div>
               </div>
             </div>
             <ol class="demo-steps sr-only">
@@ -207,28 +206,29 @@
         <div class="section-head">
           <span class="label">02 · Features</span>
           <h2>Two levels, your call</h2>
-          <p class="section-lead">Out of the box, Dites is real dictation. Add your Anthropic key and Claude turns what you say into text that's ready to send.</p>
+          <p class="section-lead">Out of the box, Dites already dictates anywhere, privately. Add your Claude key and what you say becomes text that's ready to send.</p>
         </div>
         <div class="tiers">
           <article class="card tier">
-            <p class="tag">No key · everything stays on your device</p>
-            <h3>Dictation, done right</h3>
-            <ul class="tier-list">
-              <li><strong>On-device transcription</strong> with Whisper</li>
-              <li><strong>Basic punctuation and capitalization</strong></li>
-              <li><strong>Personal dictionary</strong>: names, jargon and company names recognized more reliably. On Mac, select a word and press <span class="key">⌃⌥D</span> to add it.</li>
-              <li><strong>Text shortcuts</strong>: say “signature” and the full block appears</li>
+            <p class="tag">Free · no key</p>
+            <h3 class="tier-title">Dictate anywhere, privately</h3>
+            <p class="tier-lead">Everything happens on your device: nothing you dictate goes online.</p>
+            <ul class="benefits">
+              <li><svg class="benefit-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg><div><h4>Your voice stays with you</h4><p>Speech recognition runs on your Mac or phone.</p></div></li>
+              <li><svg class="benefit-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="2"/><rect x="13.5" y="3.5" width="7" height="7" rx="2"/><rect x="3.5" y="13.5" width="7" height="7" rx="2"/><rect x="13.5" y="13.5" width="7" height="7" rx="2"/></svg><div><h4>In all your apps</h4><p>Email, chat, documents: any text field.</p></div></li>
+              <li><svg class="benefit-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 5.5a2 2 0 0 1 2-2h12v15h-12a2 2 0 0 0-2 2z"/><path d="M4.5 20.5a2 2 0 0 1 2-2h12v2"/><path d="M9 8h6"/></svg><div><h4>Your own words</h4><p>Names, jargon and companies learned in your dictionary. On Mac: select a word, <span class="key">⌃⌥D</span>.</p></div></li>
+              <li><svg class="benefit-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3 5.5 13.5h6L10.5 21 18.5 10h-6z"/></svg><div><h4>Shortcuts that write for you</h4><p>Say “signature” and the full block appears.</p></div></li>
             </ul>
           </article>
           <article class="card tier">
-            <p class="tag tag-filled">With your Anthropic key · level 1, plus</p>
-            <h3>Text that's ready to send</h3>
-            <ul class="tier-list">
-              <li><strong>No more “um”</strong>: filler words are removed</li>
-              <li><strong>Spoken corrections</strong>: “Thursday at 2… no, make that 4” becomes “Thursday at 4”</li>
-              <li><strong>Formatting</strong>: paragraphs and lists</li>
-              <li><strong>Styles for each app</strong>: email, message, note… and your own</li>
-              <li><strong>Transformation prompts</strong>: translate, summarize, make it punchier</li>
+            <p class="tag tag-filled">With your Claude key</p>
+            <h3 class="tier-title">Text that's ready to send</h3>
+            <p class="tier-lead">Plug in your Claude key: Dites cleans up and formats for you.</p>
+            <ul class="benefits">
+              <li><svg class="benefit-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16"/><path d="m6.5 16.5 9-9 3 3-9 9h-3l-2-2z"/><path d="m12.5 10.5 3 3"/></svg><div><h4>No more “um”</h4><p>Filler words and hesitations disappear.</p></div></li>
+              <li><svg class="benefit-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7.5 4.5 12 9 16.5"/><path d="M4.5 12h10a5 5 0 0 1 0 10h-3"/></svg><div><h4>Correct yourself out loud</h4><p>“2 pm… no, 4 pm” becomes “4 pm”.</p></div></li>
+              <li><svg class="benefit-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6.5h14M5 12h14M5 17.5h14"/><circle cx="9" cy="6.5" r="1.8"/><circle cx="15" cy="12" r="1.8"/><circle cx="7.5" cy="17.5" r="1.8"/></svg><div><h4>The right tone for each app</h4><p>More formal in an email, more direct in a chat, plus your own styles.</p></div></li>
+              <li><svg class="benefit-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17"/><path d="M12 3.5c2.4 2.4 3.5 5.2 3.5 8.5s-1.1 6.1-3.5 8.5c-2.4-2.4-3.5-5.2-3.5-8.5s1.1-6.1 3.5-8.5z"/></svg><div><h4>Translate or summarize in one move</h4><p>Français, English, summary: right before you paste.</p></div></li>
             </ul>
           </article>
         </div>
@@ -362,7 +362,7 @@
           </details>
           <details>
             <summary>Which languages does it understand?</summary>
-            <p>Dites is built with French first. Transcription runs on Whisper, which also handles English and many other languages.</p>
+            <p>Dites is built with French first. Speech recognition also understands English and many other languages.</p>
           </details>
           <details>
             <summary>What do I need?</summary>
@@ -389,8 +389,8 @@
     </div>
   </footer>
 
-  <script src="/assets/js/config.js?v=dc2c5e10"></script>
-  <script src="/assets/js/main.js?v=dc2c5e10"></script>
-  <script src="/assets/js/demos.js?v=dc2c5e10"></script>
+  <script src="/assets/js/config.js?v=eff3b0cb"></script>
+  <script src="/assets/js/main.js?v=eff3b0cb"></script>
+  <script src="/assets/js/demos.js?v=eff3b0cb"></script>
 </body>
 </html>
