@@ -1,8 +1,8 @@
 // Démos animées de « Comment ça marche ».
 // Chaque étape est un <li data-on="…" data-ms="…"> de la liste .demo-steps (masquée à l'écran,
 // lue par les lecteurs d'écran) : data-on liste les drapeaux posés sur la scène (le CSS fait le
-// reste), data-ms la durée de l'étape. Lecture seulement quand la démo est visible, pause au
-// survol et au focus. Avec prefers-reduced-motion : état fixe, l'étape marquée data-static.
+// reste), data-ms la durée de l'étape. Lecture en boucle seulement quand la démo est visible,
+// sans pause au survol. Avec prefers-reduced-motion : état fixe, l'étape marquée data-static.
 (function () {
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -23,14 +23,12 @@
     }
 
     var index = 0;
-    var hovered = false;
-    var focused = false;
     var visible = false;
     var timeout = null;
     var tick = null;
     var seconds = 0;
 
-    function playing() { return !hovered && !focused && visible; }
+    function playing() { return visible; }
 
     function updateTimer() {
       if (!timer) return;
@@ -56,18 +54,12 @@
       }
     }
 
-    stage.addEventListener("pointerenter", function () { hovered = true; schedule(); });
-    stage.addEventListener("pointerleave", function () { hovered = false; schedule(); });
-    root.addEventListener("focusin", function () { focused = true; schedule(); });
-    root.addEventListener("focusout", function (event) {
-      if (!root.contains(event.relatedTarget)) { focused = false; schedule(); }
-    });
-
     if ("IntersectionObserver" in window) {
+      // Seuil bas : une démo plus haute que l'écran doit quand même jouer.
       new IntersectionObserver(function (entries) {
-        visible = entries[0].isIntersecting;
-        schedule();
-      }, { threshold: 0.35 }).observe(stage);
+        var now = entries[entries.length - 1].isIntersecting;
+        if (now !== visible) { visible = now; schedule(); }
+      }, { threshold: 0.05 }).observe(stage);
     } else {
       visible = true;
     }
