@@ -8,7 +8,8 @@ Landing page statique de Dites (dictée vocale pour Mac et Android). HTML, CSS e
 index.html              Page d'accueil en français (langue par défaut, x-default)
 en/index.html           Page d'accueil en anglais
 404.html                Page d'erreur bilingue
-vercel.json             Facultatif : URLs propres, en-têtes de cache pour /updates
+vercel.json             Redirections /download/* et rewrites /updates/* (voir plus bas)
+api/feed.js             Fonction edge qui relaie les flux de mise à jour depuis les releases GitHub
 assets/
   css/style.css         Styles (thèmes clair et sombre via variables CSS)
   js/config.js          ← liens de téléchargement et flux de mise à jour (seul fichier à modifier)
@@ -16,21 +17,32 @@ assets/
   js/demos.js           Séquenceur des démos animées de « Comment ça marche »
   img/logo.svg          Icône de l'app
   img/favicon.svg       Icône de barre des menus (favicon)
-updates/
-  mac/appcast.xml       Flux Sparkle (exemple)
-  android/latest.json   Flux de mise à jour Android (exemple)
 ```
 
 ## Liens de téléchargement
 
 Ils sont centralisés dans `assets/js/config.js`. Tout lien portant `data-download="mac"` ou `data-download="android"` reçoit l'URL correspondante au chargement de la page.
 
-## Flux de mise à jour
+## Téléchargements et mises à jour
 
-- `/updates/mac/appcast.xml` : flux Sparkle. À chaque version : nouvel `<item>`, `sparkle:version` croissant, URL du DMG, `length` et `sparkle:edSignature` (outil `sign_update` de Sparkle).
-- `/updates/android/latest.json` : `version`, `versionCode` (entier croissant), `url` de l'APK, `sha256` du fichier, `notes`.
+Les binaires ne sont **jamais** dans ce dépôt. Les CI des apps les publient dans les GitHub Releases de `jrmy-dct/dites-site`, sans jamais committer :
 
-Les valeurs actuelles sont fictives.
+- Mac : release à tag fixe `mac-latest` (`Dites.dmg`, `appcast.xml`) et releases versionnées `mac-v<version>` ;
+- Android : release à tag fixe `android-latest` (`Dites.apk`, `Dites.zip`, `latest.json`) et releases versionnées `android-v<version>`.
+
+Le site expose des URL stables sur son domaine (`vercel.json`) :
+
+| URL | Mécanisme | Cible |
+| --- | --- | --- |
+| `/download/mac` | redirection 302 | `releases/download/mac-latest/Dites.dmg` |
+| `/download/android` | redirection 302 | `releases/download/android-latest/Dites.apk` |
+| `/download/android.zip` | redirection 302 | `releases/download/android-latest/Dites.zip` |
+| `/updates/mac/appcast.xml` | rewrite vers `api/feed.js` | `releases/download/mac-latest/appcast.xml` |
+| `/updates/android/latest.json` | rewrite vers `api/feed.js` | `releases/download/android-latest/latest.json` |
+
+Les redirections sont en 302 (et non 308) car leur cible change à chaque version. Les flux passent par une petite fonction edge, plutôt que par un rewrite externe, parce que GitHub répond par une redirection vers son stockage : la fonction la suit côté serveur, puis renvoie le fichier depuis notre domaine avec le bon `Content-Type`, `Cache-Control: max-age=300` et CORS. Tant qu'aucune version n'est publiée, ces URL renvoient 404.
+
+**Ne remettez JAMAIS de fichiers dans `/updates/`** : un fichier statique y masquerait le rewrite, et les apps liraient un flux figé au lieu de la dernière release.
 
 ## Identité visuelle
 

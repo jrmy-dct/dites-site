@@ -1,16 +1,13 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
-  "headers": [
-    {
-      "source": "/updates/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" },
-        { "key": "Access-Control-Allow-Origin", "value": "*" }
-      ]
-    },
-    {
-      "source": "/updates/mac/appcast.xml",
-      "headers": [{ "key": "Content-Type", "value": "application/xml; charset=utf-8" }]
-    }
+  "redirects": [
+    { "source": "/download/mac", "destination": "https://github.com/jrmy-dct/dites-site/releases/download/mac-latest/Dites.dmg", "statusCode": 302 },
+    { "source": "/download/android", "destination": "https://github.com/jrmy-dct/dites-site/releases/download/android-latest/Dites.apk", "statusCode": 302 },
+    { "source": "/download/android.zip", "destination": "https://github.com/jrmy-dct/dites-site/releases/download/android-latest/Dites.zip", "statusCode": 302 }
+  ],
+  "rewrites": [
+    { "source": "/updates/mac/appcast.xml", "destination": "/api/feed?p=mac" },
+    { "source": "/updates/android/latest.json", "destination": "/api/feed?p=android" }
   ]
 }

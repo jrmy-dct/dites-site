@@ -191,6 +191,8 @@ p { margin: 0 0 1em; }
 .lead { font-size: clamp(1.05rem, 1.8vw, 1.2rem); max-width: 32em; }
 .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 36px 0 18px; }
 .cta-note { color: var(--muted); font-size: 0.9rem; }
+.zip-note { margin: -6px 0 14px; color: var(--muted); font-size: 0.85rem; }
+.install-card .zip-note { margin: 12px 0 0; }
 
 .hero-visual { display: grid; gap: 28px; justify-items: center; }
 
