@@ -257,6 +257,9 @@ p { margin: 0 0 1em; }
 .bubble-foot { display: flex; flex-wrap: wrap; gap: 6px 16px; padding-top: 12px; border-top: 1px solid var(--faint); }
 .bubble-foot .hint { white-space: nowrap; }
 
+.shortcut-note { margin: 28px 0 0; font-size: 0.95rem; }
+.shortcut-note + .cta-row { margin-top: 18px; }
+
 /* Sections */
 .section { padding: clamp(72px, 9vw, 120px) 0; border-bottom: 1px solid var(--faint); }
 .section-head { margin-bottom: 48px; }
@@ -270,6 +273,49 @@ p { margin: 0 0 1em; }
 .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 0; padding: 0; list-style: none; }
 .step-num { display: block; margin-bottom: 28px; color: var(--muted); font-variant-numeric: tabular-nums; }
 .step p { margin: 0; }
+
+/* Bulle Android : 64 × 30, au-dessus du clavier. Au repos : paper, contour ink, point accent.
+   En enregistrement : couleurs inversées, fond et contour accent, point et barres paper. */
+.android-row { display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; align-items: center; margin-top: 20px; }
+.android-copy p:last-child { margin: 0; }
+.droid-demo { display: flex; justify-content: center; gap: 40px; }
+.droid-state { margin: 0; display: grid; justify-items: center; gap: 12px; }
+.droid-state figcaption { font-family: var(--mono); font-size: 0.625rem; font-weight: 600; text-transform: uppercase; color: var(--muted); }
+.droid-bubble {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 64px;
+  height: 30px;
+  padding: 0 9px 0 10px;
+  border: 1px solid var(--ink);
+  border-radius: 15px;
+  background: var(--paper);
+}
+.droid-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex: none; }
+.droid-bars { display: flex; align-items: center; gap: 2px; height: 14px; }
+.droid-bars i { display: block; width: 2px; border-radius: 1px; background: var(--ink); }
+.droid-bars i:nth-child(1) { height: 5px; }
+.droid-bars i:nth-child(2) { height: 10px; }
+.droid-bars i:nth-child(3) { height: 14px; }
+.droid-bars i:nth-child(4) { height: 8px; }
+.droid-bars i:nth-child(5) { height: 12px; }
+.droid-bars i:nth-child(6) { height: 7px; }
+.droid-bars i:nth-child(7) { height: 4px; }
+.droid-bubble.is-recording { background: var(--accent); border-color: var(--accent); }
+.droid-bubble.is-recording .droid-dot, .droid-bubble.is-recording .droid-bars i { background: var(--paper); }
+.droid-bubble.is-recording .droid-bars i { animation: droid-level 0.98s linear infinite; }
+.droid-bubble.is-recording .droid-bars i:nth-child(7) { animation-delay: -0.98s; }
+.droid-bubble.is-recording .droid-bars i:nth-child(6) { animation-delay: -0.84s; }
+.droid-bubble.is-recording .droid-bars i:nth-child(5) { animation-delay: -0.70s; }
+.droid-bubble.is-recording .droid-bars i:nth-child(4) { animation-delay: -0.56s; }
+.droid-bubble.is-recording .droid-bars i:nth-child(3) { animation-delay: -0.42s; }
+.droid-bubble.is-recording .droid-bars i:nth-child(2) { animation-delay: -0.28s; }
+.droid-bubble.is-recording .droid-bars i:nth-child(1) { animation-delay: -0.14s; }
+@keyframes droid-level {
+  0% { height: 4px; } 15% { height: 11px; } 30% { height: 6px; } 45% { height: 14px; }
+  60% { height: 8px; } 75% { height: 12px; } 90% { height: 5px; } 100% { height: 4px; }
+}
 
 .tag {
   display: inline-block;
@@ -365,11 +411,12 @@ p { margin: 0 0 1em; }
   .cta-row .btn { width: 100%; }
   .install-card .btn { align-self: stretch; }
   .pill .hint { display: none; }
+  .android-row { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .level i { animation: none; }
+  .level i, .droid-bubble.is-recording .droid-bars i { animation: none; }
   .level i:nth-child(3n) { height: 14px; }
   .level i:nth-child(3n+1) { height: 8px; }
   .level i:nth-child(4n) { height: 18px; }
