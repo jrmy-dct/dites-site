@@ -193,6 +193,8 @@ p { margin: 0 0 1em; }
 .cta-note { color: var(--muted); font-size: 0.9rem; }
 .zip-note { margin: -6px 0 14px; color: var(--muted); font-size: 0.85rem; }
 .install-card .zip-note { margin: 12px 0 0; }
+.zip-note.zip-help { margin-bottom: 2px; }
+.install-card .zip-note + .zip-note { margin-top: 2px; }
 
 .hero-visual { display: grid; gap: 28px; justify-items: center; }
 
