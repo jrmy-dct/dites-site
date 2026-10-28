@@ -40,6 +40,8 @@ Le site expose des URL stables sur son domaine (`vercel.json`) :
 | `/updates/mac/appcast.xml` | rewrite vers `api/feed.js` | `releases/download/mac-latest/appcast.xml` |
 | `/updates/android/latest.json` | rewrite vers `api/feed.js` | `releases/download/android-latest/latest.json` |
 
+Sur le site, les boutons Android pointent vers `/download/android.zip` : Chrome reste parfois bloqué à la fin du téléchargement d'un .apk hors Play Store, alors que le .zip passe. L'APK direct reste proposé en lien secondaire. Sur Android (détection par User-Agent dans `main.js`, classe `is-android`), les étapes d'extraction s'affichent sous le bouton ; ailleurs, un QR code (SVG inline, généré une fois) mène à `https://dites.app/download/android.zip`.
+
 Les redirections sont en 302 (et non 308) car leur cible change à chaque version. Les flux passent par une petite fonction edge, plutôt que par un rewrite externe, parce que GitHub répond par une redirection vers son stockage : la fonction la suit côté serveur, puis renvoie le fichier depuis notre domaine avec le bon `Content-Type`, `Cache-Control: max-age=300` et CORS. Tant qu'aucune version n'est publiée, ces URL renvoient 404.
 
 **Ne remettez JAMAIS de fichiers dans `/updates/`** : un fichier statique y masquerait le rewrite, et les apps liraient un flux figé au lieu de la dernière release.

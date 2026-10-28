@@ -191,10 +191,18 @@ p { margin: 0 0 1em; }
 .lead { font-size: clamp(1.05rem, 1.8vw, 1.2rem); max-width: 32em; }
 .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 36px 0 18px; }
 .cta-note { color: var(--muted); font-size: 0.9rem; }
-.zip-note { margin: -6px 0 14px; color: var(--muted); font-size: 0.85rem; }
-.install-card .zip-note { margin: 12px 0 0; }
-.zip-note.zip-help { margin-bottom: 2px; }
-.install-card .zip-note + .zip-note { margin-top: 2px; }
+/* Android : le bouton télécharge le .zip ; lien APK discret ; étapes visibles seulement sur Android
+   (html.is-android, posé par main.js) ; QR code seulement ailleurs. */
+.apk-alt { margin: -6px 0 14px; font-size: 0.85rem; color: var(--muted); }
+.apk-alt a { color: var(--muted); }
+.install-card .apk-alt { margin: 12px 0 0; }
+.android-steps { display: none; margin: 0 0 16px; padding-left: 1.3em; color: var(--muted); font-size: 0.9rem; }
+.android-steps li + li { margin-top: 2px; }
+.is-android .android-steps { display: block; }
+.qr { display: flex; align-items: center; gap: 14px; margin: 20px 0 0; }
+.qr-code { width: 112px; height: 112px; flex: none; border: 1px solid var(--line); border-radius: 10px; }
+.qr figcaption { color: var(--muted); font-size: 0.85rem; }
+.is-android .qr { display: none; }
 
 .hero-visual { display: grid; gap: 28px; justify-items: center; }
 

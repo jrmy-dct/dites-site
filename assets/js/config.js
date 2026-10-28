@@ -6,8 +6,9 @@
 window.DITES_CONFIG = {
   downloads: {
     mac: "/download/mac",
-    android: "/download/android",
-    "android-zip": "/download/android.zip",
+    // Android : le .zip, plus fiable que l'APK direct avec Chrome.
+    android: "/download/android.zip",
+    "android-apk": "/download/android",
   },
   // Flux de mise à jour lus par les apps (relayés par api/feed.js, voir vercel.json).
   updates: {

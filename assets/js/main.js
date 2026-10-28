@@ -2,6 +2,9 @@
   var config = window.DITES_CONFIG || {};
   var downloads = config.downloads || {};
 
+  // Android : affiche les étapes d'extraction du .zip, masque le QR code.
+  if (/Android/i.test(navigator.userAgent)) document.documentElement.classList.add("is-android");
+
   // Liens de téléchargement, alimentés depuis config.js.
   document.querySelectorAll("[data-download]").forEach(function (link) {
     var url = downloads[link.getAttribute("data-download")];

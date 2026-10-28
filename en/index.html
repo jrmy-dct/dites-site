@@ -24,7 +24,7 @@
   <script>
     try { var t = localStorage.getItem("dites-theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {}
   </script>
-  <link rel="stylesheet" href="/assets/css/style.css?v=2daf9651">
+  <link rel="stylesheet" href="/assets/css/style.css?v=9c54d2f9">
 </head>
 <body>
   <a class="skip-link" href="#content">Skip to content</a>
@@ -66,17 +66,17 @@
           <p class="lead">Talk, and your words land in whatever app you're using. Your voice is transcribed on your device, and Claude can tidy it up whenever you want.</p>
           <p class="shortcut-note">On Mac, hold <span class="key">right ⌥</span> and talk (you can change it in Settings). On Android, hold the bubble above your keyboard.</p>
           <div class="cta-row">
-            <a class="btn btn-primary" data-download="mac" href="#install">
+            <a class="btn btn-primary" data-download="mac" href="/download/mac">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.2-2.8.8-3.5.8s-1.8-.8-3-.8C6.9 7.3 5.4 8.2 4.6 9.6c-1.7 2.9-.4 7.2 1.2 9.6.8 1.2 1.7 2.4 2.9 2.4 1.2-.1 1.6-.8 3-.8s1.8.8 3 .8c1.3 0 2.1-1.2 2.8-2.3.9-1.3 1.3-2.6 1.3-2.7 0 0-2.4-.9-2.4-3.9zM14.1 5.5c.6-.8 1.1-1.8 1-2.9-.9 0-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.8 1 .1 2.1-.5 2.7-1.3z"/></svg>
               Download for Mac
             </a>
-            <a class="btn btn-secondary" data-download="android" href="#install">
+            <a class="btn btn-secondary" data-download="android" href="/download/android.zip">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.6 9.5l1.7-3a.4.4 0 0 0-.7-.4l-1.8 3A10.6 10.6 0 0 0 12 8c-1.7 0-3.3.4-4.8 1.1l-1.8-3a.4.4 0 0 0-.7.4l1.7 3A9.6 9.6 0 0 0 1.5 17h21a9.6 9.6 0 0 0-4.9-7.5zM7 14.2a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm10 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></svg>
               Download for Android
             </a>
           </div>
-          <p class="zip-note zip-help">Chrome may show a warning: tap “Download anyway”, then “Install”.</p>
-          <p class="zip-note">Download not starting? <a data-download="android-zip" href="#install">Get the .zip</a></p>
+          <p class="apk-alt"><a data-download="android-apk" href="/download/android">or get the Android APK directly</a></p>
+          <ol class="android-steps" aria-label="After the download on Android"><li>Open the downloaded <strong>Dites.zip</strong> (Files app &gt; Downloads).</li><li>Tap “Extract”, then <strong>Dites.apk</strong>.</li><li>Allow the install if Android asks, then tap “Install”.</li></ol>
           <p class="cta-note">Free · macOS 14+ and Android 12+ · iOS coming soon · <a href="#install">Install guide</a></p>
         </div>
 
@@ -305,20 +305,20 @@
               <li>Allow <strong>Microphone</strong> access (so it can hear you) and <strong>Accessibility</strong> access (so it can paste into other apps).</li>
               <li>From then on, updates install from inside the app in one click, without asking for these permissions again.</li>
             </ol>
-            <a class="btn btn-primary" data-download="mac" href="#install">Download for Mac</a>
+            <a class="btn btn-primary" data-download="mac" href="/download/mac">Download for Mac</a>
           </article>
           <article class="card install-card">
             <h3>Android</h3>
             <p class="install-req">Android 12 or later</p>
             <ol class="install-steps">
-              <li>Download <strong>Dites.apk</strong> on your phone. The app isn't on the Play Store, so Chrome may show a warning: tap “Download anyway”.</li>
-              <li>Android asks you to allow installs from this source (your browser or file manager). Allow it, then install.</li>
-              <li>Grant microphone access on first launch.</li>
+              <li>On your phone, download <strong>Dites.zip</strong> (button below, or the QR code from your computer). The app isn't on the Play Store.</li>
+              <li>Open the downloaded Dites.zip (<strong>Files app &gt; Downloads</strong>), tap <strong>“Extract”</strong>, then <strong>Dites.apk</strong>.</li>
+              <li>Allow the install if Android asks, then tap <strong>“Install”</strong>. Grant microphone access on first launch.</li>
               <li>Updates start from inside the app. Android asks you to confirm “Install” each time, and the first time, to allow Dites as a source.</li>
             </ol>
-            <a class="btn btn-secondary" data-download="android" href="#install">Download for Android</a>
-            <p class="zip-note zip-help">Chrome may show a warning: tap “Download anyway”, then “Install”.</p>
-            <p class="zip-note">Download not starting? <a data-download="android-zip" href="#install">Get the .zip</a></p>
+            <a class="btn btn-secondary" data-download="android" href="/download/android.zip">Download for Android</a>
+            <p class="apk-alt"><a data-download="android-apk" href="/download/android">or get the Android APK directly</a></p>
+            <figure class="qr"><svg class="qr-code" viewBox="0 0 37 37" role="img" aria-label="QR code to https://dites.app/download/android.zip" shape-rendering="crispEdges"><rect width="37" height="37" fill="#eef2ea"/><path fill="#1b1e1a" d="M4 4h7v1h-7zM12 4h2v1h-2zM16 4h1v1h-1zM18 4h5v1h-5zM26 4h7v1h-7zM4 5h1v1h-1zM10 5h1v1h-1zM13 5h3v1h-3zM17 5h2v1h-2zM23 5h2v1h-2zM26 5h1v1h-1zM32 5h1v1h-1zM4 6h1v1h-1zM6 6h3v1h-3zM10 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h2v1h-2zM23 6h2v1h-2zM26 6h1v1h-1zM28 6h3v1h-3zM32 6h1v1h-1zM4 7h1v1h-1zM6 7h3v1h-3zM10 7h1v1h-1zM12 7h4v1h-4zM17 7h2v1h-2zM22 7h2v1h-2zM26 7h1v1h-1zM28 7h3v1h-3zM32 7h1v1h-1zM4 8h1v1h-1zM6 8h3v1h-3zM10 8h1v1h-1zM12 8h1v1h-1zM14 8h1v1h-1zM17 8h1v1h-1zM19 8h4v1h-4zM26 8h1v1h-1zM28 8h3v1h-3zM32 8h1v1h-1zM4 9h1v1h-1zM10 9h1v1h-1zM12 9h2v1h-2zM15 9h1v1h-1zM17 9h2v1h-2zM21 9h1v1h-1zM23 9h1v1h-1zM26 9h1v1h-1zM32 9h1v1h-1zM4 10h7v1h-7zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM18 10h1v1h-1zM20 10h1v1h-1zM22 10h1v1h-1zM24 10h1v1h-1zM26 10h7v1h-7zM12 11h1v1h-1zM14 11h1v1h-1zM21 11h4v1h-4zM4 12h1v1h-1zM8 12h1v1h-1zM10 12h4v1h-4zM15 12h1v1h-1zM17 12h3v1h-3zM21 12h1v1h-1zM23 12h1v1h-1zM25 12h5v1h-5zM32 12h1v1h-1zM4 13h4v1h-4zM9 13h1v1h-1zM11 13h1v1h-1zM14 13h1v1h-1zM16 13h4v1h-4zM22 13h1v1h-1zM25 13h8v1h-8zM4 14h5v1h-5zM10 14h1v1h-1zM12 14h1v1h-1zM15 14h2v1h-2zM19 14h3v1h-3zM24 14h3v1h-3zM32 14h1v1h-1zM5 15h1v1h-1zM7 15h1v1h-1zM12 15h2v1h-2zM15 15h1v1h-1zM19 15h1v1h-1zM21 15h4v1h-4zM29 15h1v1h-1zM31 15h2v1h-2zM5 16h4v1h-4zM10 16h2v1h-2zM16 16h3v1h-3zM21 16h1v1h-1zM24 16h1v1h-1zM31 16h1v1h-1zM4 17h1v1h-1zM9 17h1v1h-1zM18 17h3v1h-3zM22 17h1v1h-1zM26 17h7v1h-7zM4 18h1v1h-1zM6 18h1v1h-1zM10 18h1v1h-1zM17 18h3v1h-3zM21 18h2v1h-2zM27 18h1v1h-1zM29 18h2v1h-2zM32 18h1v1h-1zM5 19h1v1h-1zM11 19h2v1h-2zM16 19h2v1h-2zM19 19h3v1h-3zM24 19h2v1h-2zM31 19h2v1h-2zM4 20h3v1h-3zM8 20h1v1h-1zM10 20h1v1h-1zM13 20h3v1h-3zM17 20h1v1h-1zM19 20h1v1h-1zM21 20h5v1h-5zM27 20h1v1h-1zM31 20h1v1h-1zM4 21h3v1h-3zM8 21h2v1h-2zM12 21h1v1h-1zM14 21h1v1h-1zM17 21h6v1h-6zM26 21h4v1h-4zM31 21h2v1h-2zM7 22h1v1h-1zM9 22h4v1h-4zM14 22h3v1h-3zM19 22h1v1h-1zM22 22h1v1h-1zM24 22h3v1h-3zM30 22h1v1h-1zM32 22h1v1h-1zM6 23h4v1h-4zM11 23h2v1h-2zM18 23h1v1h-1zM21 23h4v1h-4zM26 23h3v1h-3zM31 23h2v1h-2zM4 24h5v1h-5zM10 24h1v1h-1zM12 24h3v1h-3zM16 24h4v1h-4zM21 24h1v1h-1zM24 24h6v1h-6zM32 24h1v1h-1zM12 25h1v1h-1zM14 25h2v1h-2zM19 25h2v1h-2zM22 25h3v1h-3zM28 25h1v1h-1zM32 25h1v1h-1zM4 26h7v1h-7zM12 26h1v1h-1zM14 26h2v1h-2zM17 26h5v1h-5zM23 26h2v1h-2zM26 26h1v1h-1zM28 26h3v1h-3zM32 26h1v1h-1zM4 27h1v1h-1zM10 27h1v1h-1zM14 27h2v1h-2zM17 27h1v1h-1zM20 27h3v1h-3zM24 27h1v1h-1zM28 27h1v1h-1zM31 27h1v1h-1zM4 28h1v1h-1zM6 28h3v1h-3zM10 28h1v1h-1zM12 28h1v1h-1zM14 28h1v1h-1zM16 28h2v1h-2zM20 28h2v1h-2zM23 28h7v1h-7zM31 28h1v1h-1zM4 29h1v1h-1zM6 29h3v1h-3zM10 29h1v1h-1zM16 29h10v1h-10zM32 29h1v1h-1zM4 30h1v1h-1zM6 30h3v1h-3zM10 30h1v1h-1zM13 30h5v1h-5zM19 30h2v1h-2zM22 30h1v1h-1zM29 30h4v1h-4zM4 31h1v1h-1zM10 31h1v1h-1zM14 31h2v1h-2zM18 31h2v1h-2zM21 31h1v1h-1zM23 31h5v1h-5zM29 31h1v1h-1zM31 31h2v1h-2zM4 32h7v1h-7zM12 32h3v1h-3zM16 32h1v1h-1zM18 32h1v1h-1zM21 32h1v1h-1zM24 32h1v1h-1zM27 32h3v1h-3zM31 32h1v1h-1z"/></svg><figcaption>On a computer? Scan this code with your phone to download Dites.zip.</figcaption></figure>
           </article>
         </div>
       </div>
@@ -368,6 +368,10 @@
             <summary>Why does macOS block Dites on first launch?</summary>
             <p>Dites isn't notarized by Apple, which would require a paid Apple developer account. The app is signed, and every update is verified by the app before it installs. You only allow it once. The steps are in the <a href="#install">Install</a> section.</p>
           </details>
+          <details>
+            <summary>Why a .zip file on Android?</summary>
+            <p>Chrome sometimes gets stuck at the end of downloading an .apk file from outside the Play Store. The .zip downloads without trouble: it contains the same Dites.apk, which you just extract. The direct APK is still available under the download button.</p>
+          </details>
         </div>
       </div>
     </section>
@@ -381,8 +385,8 @@
     </div>
   </footer>
 
-  <script src="/assets/js/config.js?v=2daf9651"></script>
-  <script src="/assets/js/main.js?v=2daf9651"></script>
-  <script src="/assets/js/demos.js?v=2daf9651"></script>
+  <script src="/assets/js/config.js?v=9c54d2f9"></script>
+  <script src="/assets/js/main.js?v=9c54d2f9"></script>
+  <script src="/assets/js/demos.js?v=9c54d2f9"></script>
 </body>
 </html>
