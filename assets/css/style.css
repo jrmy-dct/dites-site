@@ -199,6 +199,8 @@ p { margin: 0 0 1em; }
 .android-steps { display: none; margin: 0 0 16px; padding-left: 1.3em; color: var(--muted); font-size: 0.9rem; }
 .android-steps li + li { margin-top: 2px; }
 .is-android .android-steps { display: block; }
+.android-help { display: none; margin: -8px 0 16px; color: var(--muted); font-size: 0.85rem; }
+.is-android .android-help { display: block; }
 .qr { display: flex; align-items: center; gap: 14px; margin: 20px 0 0; }
 .qr-code { width: 112px; height: 112px; flex: none; border: 1px solid var(--line); border-radius: 10px; }
 .qr figcaption { color: var(--muted); font-size: 0.85rem; }

@@ -3,7 +3,13 @@
   var downloads = config.downloads || {};
 
   // Android : affiche les étapes d'extraction du .zip, masque le QR code.
-  if (/Android/i.test(navigator.userAgent)) document.documentElement.classList.add("is-android");
+  // Le bouton Android passe devant celui du Mac, dans le DOM pour garder l'ordre de tabulation.
+  if (/Android/i.test(navigator.userAgent)) {
+    document.documentElement.classList.add("is-android");
+    var row = document.querySelector(".cta-row");
+    var androidButton = row && row.querySelector('[data-download="android"]');
+    if (androidButton) row.insertBefore(androidButton, row.firstElementChild);
+  }
 
   // Liens de téléchargement, alimentés depuis config.js.
   document.querySelectorAll("[data-download]").forEach(function (link) {
