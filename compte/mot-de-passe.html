@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nouveau mot de passe — Dites</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <script src="/assets/js/theme-init.js?v=f114d21d"></script>
+  <link rel="stylesheet" href="/assets/css/style.css?v=f114d21d">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Dites"><svg class="brand-mark" viewBox="0 0 24 14" aria-hidden="true"><rect x="0.75" y="0.75" width="22.5" height="12.5" rx="6.25" fill="none" stroke="currentColor" stroke-width="1.5"/><g fill="currentColor"><rect x="5.2" y="5.75" width="1.6" height="2.5" rx="0.8"/><rect x="8.2" y="4.5" width="1.6" height="5" rx="0.8"/><rect x="11.2" y="3.75" width="1.6" height="6.5" rx="0.8"/><rect x="14.2" y="5" width="1.6" height="4" rx="0.8"/><rect x="17.2" y="6" width="1.6" height="2" rx="0.8"/></g></svg><span>Dites</span></a>
+      <p class="lang-switch account-lang" aria-label="Langue">
+        <a href="/en/account/password" lang="en" hreflang="en">EN</a>
+      </p>
+    </div>
+  </header>
+  <main class="section account" data-account="password" data-msg-success="Mot de passe changé. Retourne dans Dites et connecte-toi avec ton nouveau mot de passe." data-msg-expired="Lien expiré : redemande un e-mail depuis Dites." data-msg-weak="Mot de passe trop faible : 8 caractères minimum, avec des lettres et des chiffres." data-msg-mismatch="Les deux mots de passe ne sont pas identiques." data-msg-same="Choisis un mot de passe différent de l'ancien." data-msg-sending="Enregistrement…" data-msg-failed="Le mot de passe n'a pas pu être changé. Réessaie dans un instant." data-msg-network="Connexion impossible. Vérifie ta connexion à Internet, puis réessaie.">
+    <div class="container narrow">
+      <span class="label">Compte Dites</span>
+      <h1>Nouveau mot de passe</h1>
+      <form class="account-form" novalidate>
+        <label class="field-label" for="password">Nouveau mot de passe</label>
+        <input class="field-input" id="password" name="password" type="password" autocomplete="new-password" minlength="8" required aria-describedby="password-hint">
+        <p class="field-hint" id="password-hint">8 caractères minimum, avec des lettres et des chiffres.</p>
+        <label class="field-label" for="confirm">Confirmer</label>
+        <input class="field-input" id="confirm" name="confirm" type="password" autocomplete="new-password" minlength="8" required>
+        <button class="btn btn-primary" type="submit">Changer le mot de passe</button>
+      </form>
+      <p class="account-status" data-status role="status" aria-live="polite"></p>
+      <noscript><p class="account-status" data-kind="error">Active JavaScript pour continuer.</p></noscript>
+    </div>
+  </main>
+  <script src="/assets/js/account.js?v=f114d21d"></script>
+</body>
+</html>

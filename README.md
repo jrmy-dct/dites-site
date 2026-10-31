@@ -10,6 +10,8 @@ en/index.html           Page d'accueil en anglais
 404.html                Page d'erreur bilingue
 vercel.json             Redirections /download/* et rewrites /updates/* (voir plus bas)
 api/feed.js             Fonction edge qui relaie les flux de mise à jour depuis les releases GitHub
+compte/                 Pages du compte (FR) : confirme.html, mot-de-passe.html
+en/account/             Pages du compte (EN) : confirmed.html, password.html
 assets/
   css/style.css         Styles (thèmes clair et sombre via variables CSS)
   js/config.js          ← liens de téléchargement et flux de mise à jour (seul fichier à modifier)
@@ -53,6 +55,12 @@ Calquée sur `Theme.swift` de l'app : papier vert sauge, encre presque noire, fi
 ## Démos animées
 
 La section « Comment ça marche » contient deux démos (sur ordinateur et sur téléphone) dessinées en HTML/CSS. Les étapes sont les `<li data-on="…" data-ms="…">` de la liste `.demo-steps` (masquée à l'écran, lue par les lecteurs d'écran) : `data-on` liste les drapeaux posés sur la scène (le CSS affiche les éléments correspondants), `data-ms` la durée. Pour modifier un texte ou une étape, éditez ces `<li>` et les éléments de la scène, dans les deux langues. La lecture s'arrête hors écran, au survol et au focus ; avec `prefers-reduced-motion`, la démo affiche l'étape marquée `data-static` (état final fixe).
+
+## Pages du compte
+
+`/compte/confirme` et `/compte/mot-de-passe` (en anglais : `/en/account/confirmed` et `/en/account/password`) sont les pages d'arrivée des liens envoyés par Supabase Auth : confirmation d'inscription et nouveau mot de passe. Elles ne sont ni indexées (`noindex`) ni liées depuis la navigation. Les URL de redirection sont à déclarer dans Supabase (Authentication > URL Configuration).
+
+`assets/js/account.js` lit le fragment `#access_token=…&type=…` (ou `#error=…`), l'efface aussitôt de l'URL, et garde le jeton en mémoire seulement : jamais dans `localStorage`, jamais dans les logs. Le nouveau mot de passe part par un simple `fetch` : `PUT https://dbgpxmvhgisghbicdfpz.supabase.co/auth/v1/user`, avec la clé publishable (publique par conception) et le jeton du fragment. Ce sont les seules pages du site qui font une requête externe : `vercel.json` leur pose une Content-Security-Policy stricte, dont `connect-src` limité à ce domaine Supabase, ainsi que `Referrer-Policy: no-referrer` et `Cache-Control: no-store`. Les textes affichés sont dans les attributs `data-msg-*` de chaque page.
 
 ## Langues
 

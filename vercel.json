@@ -2,12 +2,74 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "redirects": [
-    { "source": "/download/mac", "destination": "https://github.com/jrmy-dct/dites-site/releases/download/mac-latest/Dites.dmg", "statusCode": 302 },
-    { "source": "/download/android", "destination": "https://github.com/jrmy-dct/dites-site/releases/download/android-latest/Dites.apk", "statusCode": 302 },
-    { "source": "/download/android.zip", "destination": "https://github.com/jrmy-dct/dites-site/releases/download/android-latest/Dites.zip", "statusCode": 302 }
+    {
+      "source": "/download/mac",
+      "destination": "https://github.com/jrmy-dct/dites-site/releases/download/mac-latest/Dites.dmg",
+      "statusCode": 302
+    },
+    {
+      "source": "/download/android",
+      "destination": "https://github.com/jrmy-dct/dites-site/releases/download/android-latest/Dites.apk",
+      "statusCode": 302
+    },
+    {
+      "source": "/download/android.zip",
+      "destination": "https://github.com/jrmy-dct/dites-site/releases/download/android-latest/Dites.zip",
+      "statusCode": 302
+    }
   ],
   "rewrites": [
-    { "source": "/updates/mac/appcast.xml", "destination": "/api/feed?p=mac" },
-    { "source": "/updates/android/latest.json", "destination": "/api/feed?p=android" }
+    {
+      "source": "/updates/mac/appcast.xml",
+      "destination": "/api/feed?p=mac"
+    },
+    {
+      "source": "/updates/android/latest.json",
+      "destination": "/api/feed?p=android"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/compte/:path*",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src https://dbgpxmvhgisghbicdfpz.supabase.co; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "no-referrer"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
+    },
+    {
+      "source": "/en/account/:path*",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src https://dbgpxmvhgisghbicdfpz.supabase.co; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "no-referrer"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
+    }
   ]
 }
